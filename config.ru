@@ -33,16 +33,8 @@ require ::File.expand_path('../config/environment',  __FILE__)
 
 ##
 # Returns true if the application should be run under a subdirectory.
-def map_subdir?
-  # Don't map subdir when using Passenger as passenger takes care of that.
-  !defined?(::PhusionPassenger)
-end
 
-subdir = map_subdir? && OpenProject::Configuration.rails_relative_url_root.presence
+use Rack::Protection::JsonCsrf
+use Rack::Protection::FrameOptions
 
-map (subdir || '/') do
-  use Rack::Protection::JsonCsrf
-  use Rack::Protection::FrameOptions
-
-  run OpenProject::Application
-end
+run OpenProject::Application

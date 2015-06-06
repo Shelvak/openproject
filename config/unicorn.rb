@@ -26,6 +26,7 @@
 # See doc/COPYRIGHT.rdoc for more details.
 #++
 
-worker_processes Integer(ENV['WEB_CONCURRENCY'] || 1)
-timeout Integer(ENV['WEB_TIMEOUT'] || 15)
+worker_processes 2
+timeout 60
 preload_app false
+listen '/tmp/unicorn.openproject.socket', backlog: 1024

@@ -202,27 +202,9 @@ gem 'reform', '~> 1.2.6', require: false
 # orders of magnitude compared to their native counterparts. You have been
 # warned.
 
-platforms :mri, :mingw do
-  group :mysql2 do
-    gem "mysql2", "~> 0.3.11"
-  end
+gem "mysql2", "~> 0.3.11"
+gem "openproject-translations", github: 'opf/openproject-translations', branch: 'stable/4.1'
 
-  group :postgres do
-    gem 'pg', "~> 0.17.1"
-  end
-end
-
-platforms :jruby do
-  gem "jruby-openssl"
-
-  group :mysql do
-    gem "activerecord-jdbcmysql-adapter"
-  end
-
-  group :postgres do
-    gem "activerecord-jdbcpostgresql-adapter"
-  end
-end
 
 # Load Gemfile.local, Gemfile.plugins and plugins' Gemfiles
 Dir.glob File.expand_path("../{Gemfile.local,Gemfile.plugins,lib/plugins/*/Gemfile}", __FILE__) do |file|
