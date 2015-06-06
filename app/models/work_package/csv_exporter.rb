@@ -1,7 +1,7 @@
 #-- encoding: UTF-8
 #-- copyright
 # OpenProject is a project management system.
-# Copyright (C) 2012-2014 the OpenProject Foundation (OPF)
+# Copyright (C) 2012-2015 the OpenProject Foundation (OPF)
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License version 3.
@@ -58,7 +58,6 @@ module WorkPackage::CsvExporter
   # fetch all headers
   def csv_headers(query)
     headers = []
-    headers << '#'
 
     query.columns.each_with_index do |column, _|
       headers << column.caption
@@ -76,8 +75,12 @@ module WorkPackage::CsvExporter
     end
 
     if row.size > 0
-      row.unshift(work_package.id.to_s)
-      row << work_package.description.gsub(/\r/, '').gsub(/\n/, ' ')
+
+      if work_package.description
+        row << work_package.description.gsub(/\r/, '').gsub(/\n/, ' ')
+      else
+        row << ''
+      end
     end
 
     row

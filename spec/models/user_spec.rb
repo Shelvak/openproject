@@ -1,6 +1,6 @@
 #-- copyright
 # OpenProject is a project management system.
-# Copyright (C) 2012-2014 the OpenProject Foundation (OPF)
+# Copyright (C) 2012-2015 the OpenProject Foundation (OPF)
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License version 3.
@@ -28,20 +28,22 @@
 
 require 'spec_helper'
 
-describe User, :type => :model do
+describe User, type: :model do
   let(:user) { FactoryGirl.build(:user) }
   let(:project) { FactoryGirl.create(:project_with_types) }
-  let(:role) { FactoryGirl.create(:role, :permissions => [:view_work_packages]) }
-  let(:member) { FactoryGirl.build(:member, :project => project,
-                                        :roles => [role],
-                                        :principal => user) }
+  let(:role) { FactoryGirl.create(:role, permissions: [:view_work_packages]) }
+  let(:member) {
+    FactoryGirl.build(:member, project: project,
+                               roles: [role],
+                               principal: user)
+  }
   let(:status) { FactoryGirl.create(:status) }
-  let(:issue) { FactoryGirl.build(:work_package, :type => project.types.first,
-                                      :author => user,
-                                      :project => project,
-                                      :status => status) }
-
-
+  let(:issue) {
+    FactoryGirl.build(:work_package, type: project.types.first,
+                                     author: user,
+                                     project: project,
+                                     status: status)
+  }
 
   describe 'a user with a long login (<= 256 chars)' do
     it 'is valid' do
@@ -72,16 +74,56 @@ describe User, :type => :model do
       user.login = 'a' * 257
       expect(user.save).to be_falsey
     end
-
   end
 
+  describe 'login whitespace' do
+    before do
+      user.login = login
+    end
 
-  describe :assigned_issues do
+    context 'simple spaces' do
+      let(:login) { 'a b  c' }
+
+      it 'is valid' do
+        expect(user).to be_valid
+      end
+
+      it 'may be stored in the database' do
+        expect(user.save).to be_truthy
+      end
+    end
+
+    context 'line breaks' do
+      let(:login) { 'ab\nc' }
+
+      it 'is invalid' do
+        expect(user).not_to be_valid
+      end
+
+      it 'may not be stored in the database' do
+        expect(user.save).to be_falsey
+      end
+    end
+
+    context 'tabs' do
+      let(:login) { 'ab\tc' }
+
+      it 'is invalid' do
+        expect(user).not_to be_valid
+      end
+
+      it 'may not be stored in the database' do
+        expect(user.save).to be_falsey
+      end
+    end
+  end
+
+  describe '#assigned_issues' do
     before do
       user.save!
     end
 
-    describe "WHEN the user has an issue assigned" do
+    describe 'WHEN the user has an issue assigned' do
       before do
         member.save!
 
@@ -92,7 +134,7 @@ describe User, :type => :model do
       it { expect(user.assigned_issues).to eq([issue]) }
     end
 
-    describe "WHEN the user has no issue assigned" do
+    describe 'WHEN the user has no issue assigned' do
       before do
         member.save!
 
@@ -114,11 +156,11 @@ describe User, :type => :model do
     end
   end
 
-  describe :blocked do
+  describe '#blocked' do
     let!(:blocked_user) do
       FactoryGirl.create(:user,
-                         :failed_login_count => 3,
-                         :last_failed_login_on => Time.now)
+                         failed_login_count: 3,
+                         last_failed_login_on: Time.now)
     end
 
     before do
@@ -186,14 +228,16 @@ describe User, :type => :model do
     end
   end
 
-  describe :watches do
+  describe '#watches' do
     before do
       user.save!
     end
 
-    describe "WHEN the user is watching" do
-      let(:watcher) { Watcher.new(:watchable => issue,
-                                  :user => user) }
+    describe 'WHEN the user is watching' do
+      let(:watcher) {
+        Watcher.new(watchable: issue,
+                    user: user)
+      }
 
       before do
         issue.save!
@@ -216,7 +260,7 @@ describe User, :type => :model do
 
   describe '#uses_external_authentication?' do
     context 'with identity_url' do
-      let(:user) { FactoryGirl.build(:user, :identity_url => 'test_provider:veryuniqueid') }
+      let(:user) { FactoryGirl.build(:user, identity_url: 'test_provider:veryuniqueid') }
 
       it 'should return true' do
         expect(user.uses_external_authentication?).to be_truthy
@@ -224,7 +268,7 @@ describe User, :type => :model do
     end
 
     context 'without identity_url' do
-      let(:user) { FactoryGirl.build(:user, :identity_url => nil) }
+      let(:user) { FactoryGirl.build(:user, identity_url: nil) }
 
       it 'should return false' do
         expect(user.uses_external_authentication?).to be_falsey
@@ -234,14 +278,14 @@ describe User, :type => :model do
 
   describe 'user create with empty password' do
     before do
-      @u = User.new(:firstname => "new", :lastname => "user", :mail => "newuser@somenet.foo")
-      @u.login = "new_user"
-      @u.password, @u.password_confirmation = "", ""
+      @u = User.new(firstname: 'new', lastname: 'user', mail: 'newuser@somenet.foo')
+      @u.login = 'new_user'
+      @u.password, @u.password_confirmation = '', ''
       @u.save
     end
 
     it { expect(@u.valid?).to be_falsey }
-    it { expect(@u.errors[:password]).to include I18n.t('activerecord.errors.messages.too_short', :count => Setting.password_min_length.to_i) }
+    it { expect(@u.errors[:password]).to include I18n.t('activerecord.errors.messages.too_short', count: Setting.password_min_length.to_i) }
   end
 
   describe '#random_password' do
@@ -254,10 +298,10 @@ describe User, :type => :model do
 
     it { expect(@u.password).not_to be_blank }
     it { expect(@u.password_confirmation).not_to be_blank }
-    it { expect(@u.force_password_change).to be_truthy}
+    it { expect(@u.force_password_change).to be_truthy }
   end
 
-  describe :try_authentication_for_existing_user do
+  describe '#try_authentication_for_existing_user' do
     def build_user_double_with_expired_password(is_expired)
       user_double = double('User')
       allow(user_double).to receive(:check_password?) { true }
@@ -289,7 +333,7 @@ describe User, :type => :model do
     context 'with an external auth source' do
       let(:auth_source) { FactoryGirl.build(:auth_source) }
       let(:user_with_external_auth_source) do
-        user = FactoryGirl.build(:user, :login => 'user')
+        user = FactoryGirl.build(:user, login: 'user')
         allow(user).to receive(:auth_source).and_return(auth_source)
         user
       end
@@ -300,8 +344,8 @@ describe User, :type => :model do
         end
 
         it 'should succeed' do
-          expect(User.try_authentication_for_existing_user(user_with_external_auth_source, 'password')).
-            to eq(user_with_external_auth_source)
+          expect(User.try_authentication_for_existing_user(user_with_external_auth_source, 'password'))
+            .to eq(user_with_external_auth_source)
         end
       end
 
@@ -311,8 +355,8 @@ describe User, :type => :model do
         end
 
         it 'should fail when the authentication fails' do
-          expect(User.try_authentication_for_existing_user(user_with_external_auth_source, 'password')).
-            to eq(nil)
+          expect(User.try_authentication_for_existing_user(user_with_external_auth_source, 'password'))
+            .to eq(nil)
         end
       end
     end
@@ -348,21 +392,21 @@ describe User, :type => :model do
     end
   end
 
-  describe ".default_admin_account_deleted_or_changed?" do
-    let(:default_admin) { FactoryGirl.build(:user, :login => 'admin', :password => 'admin', :password_confirmation => 'admin', :admin => true) }
+  describe '.default_admin_account_deleted_or_changed?' do
+    let(:default_admin) { FactoryGirl.build(:user, login: 'admin', password: 'admin', password_confirmation: 'admin', admin: true) }
 
     before do
       Setting.password_min_length = 5
     end
 
-    context "default admin account exists with default password" do
+    context 'default admin account exists with default password' do
       before do
         default_admin.save
       end
       it { expect(User.default_admin_account_changed?).to be_falsey }
     end
 
-    context "default admin account exists with changed password" do
+    context 'default admin account exists with changed password' do
       before do
         default_admin.update_attribute :password, 'dafaultAdminPwd'
         default_admin.update_attribute :password_confirmation, 'dafaultAdminPwd'
@@ -372,7 +416,7 @@ describe User, :type => :model do
       it { expect(User.default_admin_account_changed?).to be_truthy }
     end
 
-    context "default admin account was deleted" do
+    context 'default admin account was deleted' do
       before do
         default_admin.save
         default_admin.delete
@@ -381,7 +425,7 @@ describe User, :type => :model do
       it { expect(User.default_admin_account_changed?).to be_truthy }
     end
 
-    context "default admin account was disabled" do
+    context 'default admin account was disabled' do
       before do
         default_admin.status = User::STATUSES[:locked]
         default_admin.save
@@ -391,12 +435,12 @@ describe User, :type => :model do
     end
   end
 
-  describe ".find_by_rss_key" do
+  describe '.find_by_rss_key' do
     before do
       @rss_key = user.rss_key
     end
 
-    context "feeds enabled" do
+    context 'feeds enabled' do
       before do
         allow(Setting).to receive(:feeds_enabled?).and_return(true)
       end
@@ -404,7 +448,7 @@ describe User, :type => :model do
       it { expect(User.find_by_rss_key(@rss_key)).to eq(user) }
     end
 
-    context "feeds disabled" do
+    context 'feeds disabled' do
       before do
         allow(Setting).to receive(:feeds_enabled?).and_return(false)
       end
@@ -414,8 +458,8 @@ describe User, :type => :model do
   end
 
   describe '#impaired?' do
-    let(:anonymous) { FactoryGirl.create(:anonymous)}
-    let(:user) { FactoryGirl.create(:user)}
+    let(:anonymous) { FactoryGirl.create(:anonymous) }
+    let(:user) { FactoryGirl.create(:user) }
 
     context 'anonymous user with accessibility mode disabled for anonymous users' do
       before do

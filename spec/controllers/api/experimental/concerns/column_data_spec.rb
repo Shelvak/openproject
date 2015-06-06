@@ -1,6 +1,6 @@
 #-- copyright
 # OpenProject is a project management system.
-# Copyright (C) 2012-2014 the OpenProject Foundation (OPF)
+# Copyright (C) 2012-2015 the OpenProject Foundation (OPF)
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License version 3.
@@ -88,6 +88,39 @@ describe 'ColumnData', type: :controller do
 
       it 'lacks a model_type' do
         expect(link_meta(cf_column)[:model_type]).to be_nil
+      end
+    end
+  end
+
+  describe '#include_columns' do
+    let(:regular_columns) { ['type'] }
+
+    context 'regular fields' do
+      let(:bogus_columns) { ['bogus'] }
+
+      it 'includes nothing empty column names' do
+        expect(includes_for_columns([])).to eq([])
+      end
+
+      it 'includes mutual fields' do
+        expect(includes_for_columns(regular_columns)).to eq([:type])
+      end
+
+      it 'excludes bogus columns' do
+        expect(includes_for_columns(regular_columns | bogus_columns)).to eq([:type])
+      end
+    end
+
+    context 'custom fields' do
+      let(:custom_fields) { ['cf_1'] }
+
+      it 'includes custom fields' do
+        expect(includes_for_columns(custom_fields)).to eq([{ custom_values: :custom_field }])
+      end
+
+      it 'includes custom fields and regular fields' do
+        columns = custom_fields | regular_columns
+        expect(includes_for_columns(columns)).to eq([:type, { custom_values: :custom_field }])
       end
     end
   end
