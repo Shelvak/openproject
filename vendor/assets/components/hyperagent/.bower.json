@@ -1,0 +1,38 @@
+{
+  "name": "hyperagent",
+  "version": "0.4.2",
+  "dependencies": {
+    "q": "~1.0.0",
+    "jquery": "~2.0.0",
+    "uri.js": "~1.13.0"
+  },
+  "devDependencies": {
+    "mocha": "~1.18.0",
+    "chai": "~1.9.0"
+  },
+  "ignore": [
+    "**/*.md",
+    ".editorconfig",
+    ".gitattributes",
+    ".gitignore",
+    ".travis.yml",
+    "Gruntfile.js",
+    "karma*.js",
+    "lib/",
+    "sample/",
+    "test/",
+    "dist/*.min.js",
+    "dist/commonjs",
+    "package.json"
+  ],
+  "homepage": "https://github.com/manwithtwowatches/hyperagent",
+  "_release": "0.4.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.4.2",
+    "commit": "aad9758c632994b219fb473aeb08c98983f7d811"
+  },
+  "_source": "git://github.com/manwithtwowatches/hyperagent.git",
+  "_target": "v0.4.2",
+  "_originalSource": "manwithtwowatches/hyperagent"
+}

@@ -134,8 +134,8 @@ class Setting < ActiveRecord::Base
   def value
     v = read_attribute(:value)
     # Unserialize serialized settings
-    v = YAML::load(v) if @@available_settings[name]['serialized'] && v.is_a?(String)
-    v = v.to_sym if @@available_settings[name]['format'] == 'symbol' && !v.blank?
+    v = YAML::load(v) if @@available_settings[self.name]['serialized'] && v.is_a?(String)
+    v = v.to_sym if @@available_settings[self.name]['format'] == 'symbol' && !v.blank?
     v
   end
 

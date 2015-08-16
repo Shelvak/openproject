@@ -106,7 +106,7 @@ available_languages:
 default_language:
   default: en
 host_name:
-  default: localhost:3000
+  default: openproject.lamanuelsavio.org
 protocol:
   default: http
 feeds_enabled:

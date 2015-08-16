@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+export NODE_PATH=/home/rotsen/apps/openproject/rock/lib/node_modules
+export NPM_CONFIG_PREFIX=/home/rotsen/apps/openproject/rock
+export npm_config_prefix=/home/rotsen/apps/openproject/rock
+exec rock/bin/node "$@"

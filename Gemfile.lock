@@ -123,6 +123,8 @@ GEM
     bourbon (4.2.0)
       sass (~> 3.4)
       thor
+    bugsnag (2.8.7)
+      multi_json (~> 1.0)
     builder (3.0.4)
     byebug (2.7.0)
       columnize (~> 0.3)
@@ -494,6 +496,7 @@ DEPENDENCIES
   autoprefixer-rails
   awesome_nested_set
   bourbon (~> 4.2.0)
+  bugsnag
   capybara (~> 2.3.0)
   capybara-screenshot (~> 1.0.4)
   capybara-select2!

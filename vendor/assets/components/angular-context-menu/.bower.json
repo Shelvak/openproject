@@ -1,0 +1,46 @@
+{
+  "name": "angular-context-menu",
+  "version": "0.1.8",
+  "description": "An AngularJS directive to set up and open a context menu when a right-click or click event is triggered",
+  "keywords": [
+    "angular-context-menu",
+    "context menu",
+    "right click",
+    "angularjs",
+    "angular"
+  ],
+  "authors": [
+    "Ian Kennington Walter (http://ianvonwalter.com)",
+    "Briant Ford",
+    "Till Breuer (https://github.com/tilt)",
+    "Finn GmbH (http://finn.de)"
+  ],
+  "license": "MIT",
+  "main": [
+    "dist/angular-context-menu.js",
+    "README.md"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "test",
+    "assets",
+    "src",
+    "index.html",
+    "gulpfile.js",
+    "package.json"
+  ],
+  "dependencies": {
+    "angular": ">= 1.2.5"
+  },
+  "homepage": "https://github.com/finnlabs/angular-context-menu",
+  "_release": "0.1.8",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.1.8",
+    "commit": "0e029aa234b15e63b2b37a86766dfecade6572fe"
+  },
+  "_source": "git://github.com/finnlabs/angular-context-menu.git",
+  "_target": "v0.1.8",
+  "_originalSource": "finnlabs/angular-context-menu"
+}

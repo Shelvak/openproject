@@ -1,0 +1,1746 @@
+---
+es:
+  account:
+    delete: Borrar cuenta
+    delete_confirmation: "¿Está seguro que desea eliminar la cuenta?"
+    deleted: Cuenta eliminada con éxito
+    deletion_info:
+      data_consequences:
+        other: De los datos el usuario creado (por ejemplo correo electrónico, preferencias,
+          paquetes de trabajo, wiki entradas) tanto como sea posible se eliminará.
+          Sin embargo, tenga en cuenta que no se pueden eliminar datos como entradas
+          wiki y paquetes de trabajo sin obstaculizar el trabajo de los demás usuarios.
+          Dichos datos por lo tanto es reasignados a una cuenta denominada "user Deleted".
+          Como los datos de cada cuenta eliminada es reasignados a elimine esta cuenta
+          no será posible distinguir los datos del usuario creado a partir de los
+          datos de otra cuenta.
+        self: De los datos ha creado (por ejemplo e-mail, preferencias, paquetes de
+          trabajo, wiki entradas) tanto como sea posible se eliminará. Sin embargo,
+          tenga en cuenta que no se pueden eliminar datos como  entradas wiki y paquetes
+          de trabajo sin obstaculizar el trabajo de los demás usuarios. Dichos datos
+          por lo tanto es reasignados a una cuenta denominada "user Deleted". Como
+          los datos de cada cuenta eliminada es reasignados a esta cuenta no será
+          posible distinguir los datos que creado a partir de los datos de otra cuenta
+          eliminada.
+      heading: Borrar cuenta de %{name}
+      info:
+        other: Borrar la cuenta de usuario es una acción irreversible.
+        self: Borrar la cuenta de usuario es una acción irreversible.
+      login_consequences:
+        other: La cuenta se borrará del sistema. Por lo tanto, el usuario ya no será
+          capaz de iniciar sesión con sus credenciales actuales. Él/ella puede elegir
+          volver a ser un usuario de la aplicación por los medios que otorga a esta
+          aplicación.
+        self: Su cuenta se borrará del sistema. Por lo tanto, ya no serás capaz de
+          iniciar sesión con tus credenciales actuales. Si usted decide convertirse
+          en un usuario de nuevo esta aplicación, puedes hacerlo mediante el uso de
+          los medios otorga a esta aplicación.
+    error_inactive_activation_by_mail: Su cuenta aún no está activada. Para activar
+      su cuenta, haga clic en el enlace que fue enviado por correo electrónico.
+    error_inactive_manual_activation: Su cuenta aún no está activada. Por favor, espere
+      a que el administrador active su cuenta.
+    error_self_registration_disabled: El registro de usuarios está deshabilitado en
+      este sistema. Por favor pida a un administrador que cree una cuenta para usted.
+    login_with_auth_provider: o inicie sesión con su cuenta existente
+  actionview_instancetag_blank_option: Por favor, elija
+  activerecord:
+    attributes:
+      attachment:
+        downloads: Descargas
+        filename: Archivo
+        filesize: Tamaño
+      auth_source:
+        account: Cuenta
+        attr_firstname: Atributo Nombre
+        attr_lastname: Atributo Apellido
+        attr_login: Atributo Ingreso
+        attr_mail: Atributo Correo electrónico
+        base_dn: Base DN
+        host: Host
+        onthefly: Creación de usuario sobre la marcha
+        port: Puerto
+      comment:
+        commented: Comentado
+      custom_field:
+        default_value: Valor predeterminado
+        editable: Editable
+        field_format: Formato
+        is_filter: Usado como filtro
+        is_required: Obligatorio
+        max_length: Longitud máxima
+        min_length: Longitud mínima
+        possible_values: Valores posibles
+        regexp: Expresión regular
+        searchable: Búsquedas
+        visible: Visible
+      custom_value:
+        value: Valor
+      relation:
+        delay: Retraso
+        from: Paquete de trabajo
+        to: Paquete de trabajo relacionado
+      status:
+        is_closed: Paquete de trabajo cerrado
+      journal:
+        notes: Notas
+      member:
+        roles: Roles
+      project:
+        homepage: Página de inicio
+        identifier: Identificador
+        work_packages: Paquetes de trabajo
+        parent: Subproyecto de
+        versions: Versiones
+        project_type: Tipo de proyecto
+        responsible: Responsable
+        types: Tipos
+        queries: Consultas
+      query:
+        column_names: Columnas
+        group_by: Resultados de grupo por
+        filters: Filtros
+      repository:
+        url: URL
+      role:
+        assignable: Paquetes de trabajo pueden ser asignados a este rol
+      time_entry:
+        activity: Actividad
+        hours: Horas
+        work_package: Paquete de trabajo
+        spent_on: Fecha
+        type: Tipo
+      type:
+        is_in_roadmap: Paquetes de trabajo mostrados en la hoja de ruta
+        in_aggregation: Paquetes de trabajo mostrados en la agregación
+        is_milestone: Paquetes de trabajo mostrados como avance
+        color: Color
+      user:
+        admin: Administrador
+        auth_source: Modos de autentificación
+        language: Idioma
+        last_login_on: Ultimó acceso
+        mail_notification: Notificaciones de correo electrónico
+        new_password: Nueva contraseña
+        password_confirmation: Confirmación
+        force_password_change: Aplicar el cambio de contraseña en la próxima sesión
+      user_preference:
+        comments_sorting: Mostrar comentarios
+        hide_mail: Ocultar mi dirección de correo electrónico
+        impaired: Modo de accesibilidad
+        time_zone: Zona horaria
+        warn_on_leaving_unsaved: Avisarme cuando salga sin guardar de una página con
+          texto modificado
+      version:
+        effective_date: Fecha de vencimiento
+        sharing: Compartiendo
+      wiki:
+        start_page: Página de inicio
+      wiki_content:
+        text: Texto
+      wiki_page:
+        parent_title: Página principal
+        redirect_existing_links: Redirigir los enlaces existentes
+      planning_element_type_color:
+        name: Nombre
+        hexcode: Código hexadecimal
+      project_association:
+        description: Causa
+      project_type:
+        allows_association: Permite asociar
+        name: Nombre
+        reported_project_statuses: Estado de proyectos reportados
+        position: Posición
+      timeline:
+        name: Nombre
+        options: ''
+      reporting:
+        reported_project_status_comment: Comentario de estado
+        reporting_to_project: Informes del proyecto
+        reported_project_status: Estado del proyecto
+        created_at: Creado
+      work_package:
+        done_ratio: "% completado"
+        fixed_version: Versión
+        parent: Padre
+        parent_issue: Padre
+        parent_work_package: Padre
+        priority: Prioridad
+        progress: "% completado"
+        responsible: Responsable
+        spent_time: Tiempo empleado
+        subproject: Subproyecto
+        time_entries: Tiempo de registro
+        type: Tipo
+        watcher: Vigilante
+    errors:
+      messages:
+        accepted: debe ser aceptado
+        blank: No puede ser vacío
+        cant_link_a_work_package_with_a_descendant: Un paquete de trabajo no puede
+          ser vinculado a una sola de sus subtareas
+        circular_dependency: Esta relación podría crear una dependencia circular
+        confirmation: No coincide con la confirmación
+        empty: No puede estar vacío
+        equal_to: debe ser igual a %{count}
+        even: debe ser incluido
+        exclusion: está reservado
+        greater_than: debe ser mayor que %{count}
+        greater_than_or_equal_to: debe ser mayor o igual a %{count}
+        smaller_than_or_equal_to_max_length: Debe ser menor o igual que el tamaño
+          maximo
+        greater_than_start_date: debe ser mayor que la fecha de inicio
+        inclusion: No está incluido en la lista
+        invalid: no es válido
+        less_than: debe ser menos de %{count}
+        less_than_or_equal_to: debe ser menor o igual a %{count}
+        not_a_date: No es una fecha
+        not_a_number: No es un número
+        not_an_integer: No es un entero
+        not_same_project: no pertenecen a un mismo proyecto
+        odd: debe ser impar
+        taken: Ya se ha tomado
+        too_long: es demasiado largo (máximo es %{count} caracteres)
+        too_short: es demasiado corto (mínimo es %{count} caracteres)
+        wrong_length: es la longitud incorrecta (debe ser caracteres %{count})
+        after: debe ser después de %{date}
+        after_or_equal_to: debe ser después de o igual a %{date}
+        before: debe ser antes de %{date}
+        before_or_equal_to: debe ser antes o igual a %{date}
+        could_not_be_copied: No podían ser copiados (totalmente)
+      models:
+        project_association:
+          identical_projects: No pueden crearse de un proyecto a sí mismo
+          project_association_not_allowed: no permite asociaciones
+        repository:
+          not_whitelisted: is not allowed by the configuration
+          no_directory: is not a directory
+        work_package:
+          is_not_a_valid_target_for_time_entries: 'Paquete de trabajo #%{id} no es
+            un objetivo válido para reasignar las entradas de tiempo.'
+          attributes:
+            due_date:
+              not_start_date: No es sobre la fecha de inicio, aunque es necesario
+                para los avances
+            parent_id:
+              cannot_be_milestone: No puede ser un avance
+              cannot_be_in_another_project: No puede estar en otro proyecto
+              not_a_valid_parent: no es válido
+              does_not_exist: No existe
+            status_id:
+              status_transition_invalid: no existe transición válida desde el antiguo
+                al nuevo estatus para los roles de usuario actual
+            priority_id:
+              only_active_priorities_allowed: debe estar activo
+        user:
+          attributes:
+            password:
+              weak: 'debe contener caracteres de las siguientes clases (al menos %{min_count}
+                al %{all_count}): %{rules}'
+              lowercase: en minúsculas (por ejemplo 'a')
+              uppercase: en mayúsculas (por ejemplo ' A')
+              numeric: numérico (por ejemplo, ' 1')
+              special: especial (por ejemplo, ' %')
+              reused:
+                one: has been used before. Please choose one that is different from
+                  your last one.
+                other: has been used before. Please choose one that is different from
+                  your last %{count}.
+        member:
+          principal_blank: Por favor seleccione al menos un usuario o grupo.
+          role_blank: Elija al menos un rol.
+      template:
+        body: 'Por favor revise los siguientes campos:'
+        header:
+          one: 1 error prohibited this %{model} from being saved
+          other: "%{count} errors prohibited this %{model} from being saved"
+    models:
+      attachment: Archivo
+      board: Foro
+      comment: Comentario
+      custom_field: Campo personalizado
+      group: Grupo
+      issue: Caso
+      category: Categoría
+      status: Estado del paquete de trabajo
+      member: Miembro
+      news: Noticias
+      project: Proyecto
+      query: Consulta personalizada
+      role:
+        one: Role
+        other: Roles
+      type: Tipo
+      planning_element: Elemento de planificación
+      project_type: Tipo de proyecto
+      user: Usuario
+      version: Versión
+      wiki: Wiki
+      wiki_page: Página wiki
+      workflow: Flujo de trabajo
+      work_package: Paquete de trabajo
+  errors:
+    header_invalid_fields: 'Hubo problemas con los siguientes campos:'
+  activity:
+    created: 'Creado: %{title}'
+    updated: 'Actualizado: %{title}'
+  attributes:
+    active: Activo
+    assigned_to: Asignado a
+    attachments: Archivos adjuntos
+    author: Autor
+    base: 'Error general:'
+    blocks_ids: Bloques
+    category: Categoría
+    comments: Comentario
+    content: Contenido
+    created_at: Creado en
+    created_on: Creado en
+    custom_values: Campos Personalizados
+    default_columns: Columnas predeterminadas
+    description: Descripción
+    display_sums: Mostrar sumas
+    due_date: Fecha de vencimiento
+    estimated_hours: Tiempo estimado
+    firstname: Nombre
+    group: Grupo
+    groupname: Nombre del grupo
+    is_default: Valor predeterminado
+    is_for_all: Para todos los proyectos
+    is_public: Público
+    lastname: Apellido
+    login: Ingresar
+    mail: Correo electrónico
+    name: Nombre
+    password: Contraseña
+    project: Proyecto
+    role: Role
+    start_date: Fecha de inicio
+    status: Estado
+    subject: Asunto
+    summary: Resumen
+    title: Título
+    type: Tipo
+    updated_at: Actualizada el
+    updated_on: Actualizada el
+    user: Usuario
+    version: Versión
+    work_package: Paquete de trabajo
+  button_add: Añadir
+  button_add_watcher: Añadir observador
+  button_annotate: Anotar
+  button_apply: Aplicar
+  button_archive: Archivar
+  button_back: Atrás
+  button_cancel: Cancelar
+  button_change: Cambiar
+  button_change_parent_page: Página principal de cambio
+  button_change_password: Cambiar contraseña
+  button_check_all: Marcar todo
+  button_clear: Eliminar
+  button_collapse_all: Colapsar todo
+  button_configure: Configurar
+  button_copy: Copiar
+  button_copy_and_follow: Copiar y seguir
+  button_create: Crear
+  button_create_and_continue: Crear y continuar
+  button_delete: Borrar
+  button_delete_watcher: Eliminar observador %{name}
+  button_download: Descargar
+  button_duplicate: Duplicar
+  button_edit: Editar
+  button_edit_associated_wikipage: 'Editar página Wiki asociada: %{page_title}'
+  button_expand_all: Expandir todos
+  button_list: Lista
+  button_lock: Bloquear
+  button_log_time: Tiempo de registro
+  button_login: Ingresar
+  button_move: Mover
+  button_move_and_follow: Mover y seguir
+  button_quote: Comentario
+  button_remove_widget: Quitar componente
+  button_rename: Cambiar el nombre
+  button_reply: Respuesta
+  button_reset: Reiniciar
+  button_rollback: Volver a esta versión
+  button_save: Guardar
+  button_show: Mostrar
+  button_sort: Ordenar
+  button_submit: Enviar
+  button_test: Prueba
+  button_unarchive: Desarchivar
+  button_uncheck_all: De-seleccionar todos
+  button_unlock: Desbloquear
+  button_unwatch: No controlar más
+  button_update: Actualizar
+  button_view: Ver
+  button_watch: Controlar
+  button_manage_menu_entry: Configurar el menú
+  button_add_menu_entry: Agregar el elemento de menú
+  button_configure_menu_entry: Configurar el menú
+  button_delete_menu_entry: Eliminar el elemento del menú
+  copy_project:
+    started: Empezó a copiar proyecto de '%{source_project_name}' a "%{target_project_name}".
+      Se le informará por correo tan pronto como esté disponible el proyecto "%{target_project_name}".
+    failed: No se puede copiar proyecto %{source_project_name}
+    succeeded: Proyecto creado %{target_project_name}
+    errors: Error
+    text:
+      failed: No se pudo copiar el proyecto "%{source_project_name}" al proyecto "%{target_project_name}".
+      succeeded: Proyecto copiado de "%{source_project_name}" a "%{target_project_name}".
+  create_child_page: Crear nueva subpágina
+  create_child_page_for: 'Crear nueva subpágina hijo: ''%{title}'''
+  create_new_page: Crear nueva página
+  date:
+    abbr_day_names:
+    - Dom
+    - Lun
+    - Mar
+    - Mie
+    - Jue
+    - Vie
+    - Sab
+    abbr_month_names:
+    - 
+    - Ene
+    - Feb
+    - Mar
+    - Abr
+    - May
+    - Jun
+    - Jul
+    - Ago
+    - Sep
+    - Oct
+    - Nov
+    - Dec
+    day_names:
+    - Domingo
+    - Lunes
+    - Martes
+    - Miércoles
+    - Jueves
+    - Viernes
+    - Sábado
+    formats:
+      default: "%m/%d/%Y"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    month_names:
+    - 
+    - Enero
+    - Febrero
+    - Marzo
+    - Abril
+    - May
+    - Junio
+    - Julio
+    - Agosto
+    - Septiembre
+    - Octubre
+    - Noviembre
+    - Diciembre
+    order:
+    - :año
+    - :mes
+    - :día
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: about 1 hour
+        other: about %{count} hours
+      about_x_months:
+        one: about 1 month
+        other: about %{count} months
+      about_x_years:
+        one: about 1 year
+        other: about %{count} years
+      almost_x_years:
+        one: almost 1 year
+        other: almost %{count} years
+      half_a_minute: medio minuto
+      less_than_x_minutes:
+        one: less than a minute
+        other: less than %{count} minutes
+      less_than_x_seconds:
+        one: less than 1 second
+        other: less than %{count} seconds
+      over_x_years:
+        one: over 1 year
+        other: over %{count} years
+      x_days:
+        one: 1 day
+        other: "%{count} days"
+      x_minutes:
+        one: 1 minute
+        other: "%{count} minutes"
+      x_months:
+        one: 1 month
+        other: "%{count} months"
+      x_seconds:
+        one: 1 second
+        other: "%{count} seconds"
+    units:
+      hour:
+        one: hour
+        other: hours
+  default_activity_management: Administración
+  default_activity_design: Diseño
+  default_activity_development: Desarrollo
+  default_activity_testing: Probando
+  default_activity_Support: Soporte
+  default_activity_Other: Otros
+  default_status_new: nuevo
+  default_status_specified: especificado
+  default_status_confirmed: confirmado
+  default_status_to_be_scheduled: por ser programado
+  default_status_scheduled: agendado
+  default_status_in_progress: en progreso
+  default_status_tested: probado
+  default_status_on_hold: en espera
+  default_status_rejected: rechazado
+  default_status_closed: cerrado
+  default_priority_low: Baja
+  default_priority_normal: Normal
+  default_priority_high: Alta
+  default_priority_immediate: Inmediata
+  default_project_type_customer: Proyecto del cliente
+  default_project_type_internal: Proyecto Interno
+  default_reported_project_status_green: Verde
+  default_reported_project_status_amber: Amarillo
+  default_reported_project_status_red: Rojo
+  default_role_anonymous: Anónimo
+  default_role_developer: Desarrollador
+  default_role_manager: Administrador
+  default_role_non_member: No miembro
+  default_role_reader: Lector
+  default_role_member: Miembro
+  default_type: Paquete de trabajo
+  default_type_task: Tarea
+  default_type_deliverable: Entregable
+  default_type_milestone: Avance
+  default_type_phase: Fase
+  default_type_bug: Error
+  default_type_feature: Característica
+  description_active: Activo?
+  description_attachment_toggle: Mostrar/ocultar archivos adjuntos
+  description_autocomplete: Este campo utiliza Autocompletar. Mientras se escribe
+    el título de un paquete de trabajo recibirá una lista de posibles candidatos.
+    Elija uno usando las teclas de  flecha arriba y abajo  y selecciónelo con el tabulador
+    o enter. Alternativamente usted puede ingresar el número del paquete de trabajo
+    directamente.
+  description_available_columns: Columnas disponibles
+  description_choose_project: Proyectos
+  description_compare_from: Comparar versiones
+  description_compare_to: Compararlo con
+  description_current_position: 'Usted está aquí:'
+  description_date_from: Introduzca la fecha de inicio
+  description_date_range_interval: Elija rango mediante la selección de fecha de inicio
+    y fin
+  description_date_range_list: Elija el rango desde la lista
+  description_date_to: Introduzca la fecha de finalización
+  description_enter_number: Ingrese número
+  description_enter_text: Ingrese texto
+  description_filter: Filtro
+  description_filter_toggle: Mostrar/Ocultar filtro
+  description_category_reassign: Elegir categoría
+  description_message_content: Contenido del mensaje
+  description_my_project: Usted es miembro
+  description_notes: Notas
+  description_parent_work_package: Paquete de trabajo primario actual
+  description_project_scope: "Ámbito de búsqueda"
+  description_query_sort_criteria_attribute: Ordenar atributos
+  description_query_sort_criteria_direction: Ordenar por dirección
+  description_search: Campo de búsqueda
+  description_select_work_package: Seleccione el paquete de trabajo
+  description_selected_columns: Columnas seleccionadas
+  description_sub_work_package: Subpaquetes de trabajo actuales
+  description_toc_toggle: Mostrar/ocultar tabla de contenidos
+  description_user_mail_notification: Configuraciónes de notificación por correo
+  description_wiki_subpages_reassign: Elija nueva página principal
+  direction: ltr
+  enumeration_activities: Actividades (tiempo de seguimiento)
+  enumeration_work_package_priorities: Prioridades del paquete de trabajo
+  enumeration_system_activity: Actividad del sistema
+  enumeration_reported_project_statuses: Estatus del proyecto reportado
+  error_can_not_archive_project: El proyecto no se puede archivar
+  error_can_not_delete_custom_field: Imposible eliminar el campo seleccionado
+  error_can_not_delete_type: Este tipo contiene paquetes de trabajo y no se puede
+    eliminar.
+  error_can_not_delete_standard_type: Tipos estándar no se pueden borrar.
+  error_can_not_remove_role: Este rol esta en uso y no puede ser eliminado
+  error_can_not_reopen_work_package_on_closed_version: No se puede volver a abrir
+    un paquete de trabajo asignado a una versión cerrada
+  error_can_t_load_default_data: 'No se pudo cargar configuración predeterminada:
+    %{value}'
+  error_check_user_and_role: Por favor elige un usuario y un rol.
+  error_work_package_done_ratios_not_updated: Ejecución de paquete de trabajos no
+    actualizado.
+  error_work_package_not_found_in_project: El paquete de trabajo no se ha encontrado
+    o no pertenece a este proyecto
+  error_must_be_project_member: debe ser miembro del proyecto
+  error_no_default_work_package_status: Ningún estado del paquete trabajo predeterminado
+    está definido. Por favor, compruebe su configuración (ir a "Administración-> Situación
+    del paquete de trabajo").
+  error_no_type_in_project: Ningún tipo se asocia a este proyecto. Por favor, Compruebe
+    la configuración del proyecto.
+  error_omniauth_registration_timed_out: El registro mediante un proveedor de autenticación
+    externa expiró. Por favor inténtelo nuevamente.
+  error_scm_annotate: La entrada no existe o no puede ser anotada.
+  error_scm_command_failed: 'Se produjo un error al intentar acceder al repositorio:
+    %{value}'
+  error_scm_not_found: La entrada o la revisión no se encontró en el repositorio.
+  error_unable_delete_status: No se puede eliminar el estado del paquete de trabajo
+  error_unable_delete_default_status: No se puede eliminar el estado del paquete trabajo
+    por defecto. Por favor, seleccione otro estado de trabajo predeterminado antes
+    de eliminar el actual.
+  error_unable_to_connect: No se puede conectar (%{value})
+  error_workflow_copy_source: Por favor, seleccione un tipo de fuente o rol
+  error_workflow_copy_target: Por favor, seleccione tipo(s) de objetivos y role(s)
+  error_menu_item_not_created: No se pudo agregar el elemento de menú
+  error_menu_item_not_saved: Elemento de menú no podría ser guardado
+  error_external_authentication_failed: Se ha producido un error durante la autenticación
+    externa. Por favor inténtelo nuevamente.
+  events:
+    project: Proyecto editado
+    changeset: Set de cambios editado
+    message: Mensaje editado
+    news: Noticias
+    reply: Respondió
+    time_entry: Tiempo de ingreso editado
+    wiki_page: Página wiki editada
+    work_package_closed: Paquete de trabajo cerrada
+    work_package_edit: Paquete de trabajo editado
+    work_package_note: Nota de paquete de trabajo añadido
+  general_csv_decimal_separator: "."
+  general_csv_encoding: UTF-8
+  general_csv_separator: ","
+  general_first_day_of_week: '7'
+  general_lang_name: Español
+  general_pdf_encoding: ISO-8859-1
+  general_text_no: 'no'
+  general_text_yes: sí
+  general_text_No: 'No'
+  general_text_Yes: Sí
+  gui_validation_error: 1 error
+  gui_validation_error_plural: errores %{count}
+  instructions_after_registration: Podras entrar tan pronto como tu cuenta halla sido
+    activada haciendo clic sobre %{signin}.
+  instructions_after_logout: Puedes entrar nuevamente haciendo clic sobre  %{signin}.
+  instructions_after_error: Puedes intentar entrar nuevamente haciendo clic sobre
+    %{signin}. Si el error persiste, contacta a tu administrador para que te ayude.
+  label_account: Cuenta
+  label_activity: Actividad
+  label_add_another_file: Agregar otro archivo
+  label_add_columns: Agregar columnas seleccionadas
+  label_add_note: Añadir una nota
+  label_add_related_issues: Agregar tema relacionado
+  label_add_related_work_packages: Añadir paquetes de trabajo relacionados
+  label_add_subtask: Agregar subtarea
+  label_added: agregado
+  label_added_time_by: Añadida por %{author}  hace %{age}
+  label_additional_workflow_transitions_for_assignee: Transiciones adicionales permitidas
+    cuando el usuario es el asignado
+  label_additional_workflow_transitions_for_author: Transiciones adicionales permitidas
+    cuando el usuario es el autor
+  label_administration: Administración
+  label_age: Edad
+  label_ago: días antes
+  label_all: todos
+  label_all_time: todo el tiempo
+  label_all_words: Todas las palabras
+  label_and_its_subprojects: "%{value} y sus subproyectos"
+  label_api_access_key: Código de acceso API
+  label_api_access_key_created_on: Código de acceso API creado  hace %{value}
+  label_applied_status: Estado aplicado
+  label_ascending: Ascendente
+  label_assigned_to_me_work_packages: Paquetes de trabajo asignados a mí
+  label_associated_revisions: Revisiones asociadas
+  label_attachment_delete: Borrar archivo
+  label_attachment_new: Archivo nuevo
+  label_attachment_plural: Archivos
+  label_attribute: Atributo
+  label_attribute_plural: Atributos
+  label_auth_source: Modos de autentificación
+  label_auth_source_new: Nuevo modo de autenticaficación
+  label_auth_source_plural: Modos de autentificación
+  label_authentication: Autentificación
+  label_blocked_by: bloqueado por
+  label_blocks: bloques
+  label_board_locked: Bloqueado
+  label_board_new: Foro nuevo
+  label_board_plural: Foros
+  label_board_sticky: Adhesivo
+  label_boolean: Booleano
+  label_branch: Sucursal
+  label_browse: Explorar
+  label_bulk_edit_selected_work_packages: Edición masiva de paquetes de trabajo
+  label_calendar: Calendario
+  label_calendar_show: Mostrar Calendario
+  label_category: Categoría
+  label_wiki_menu_item: Elemento de menú wiki
+  label_select_main_menu_item: Seleccione nuevo elemento de menú principal
+  label_change_plural: Cambios
+  label_change_properties: Cambiar propiedades
+  label_change_status: Cambiar estado
+  label_change_view_all: Ver todos los cambios
+  label_changes_details: Detalles de todos los cambios
+  label_changeset_plural: Conjuntos de cambios
+  label_checked: verificado
+  label_chronological_order: En orden cronológico
+  label_close_versions: Cerrar versiones completadas
+  label_closed_work_packages: cerrado
+  label_collapse: Colapsar
+  label_configuration: configuracion
+  label_comment_add: Añadir un comentario
+  label_comment_added: Comentario añadido
+  label_comment_delete: Eliminar comentarios
+  label_comment_plural: Comentarios
+  label_commits_per_author: Compromisos por autor
+  label_commits_per_month: Compromisos por mes
+  label_confirmation: Confirmación
+  label_contains: contiene
+  label_content: Contenido
+  label_copied: copiado
+  label_copy_same_as_target: Igual al destino
+  label_copy_source: Fuente
+  label_copy_target: Objetivo
+  label_copy_workflow_from: Copiar flujo de trabajo desde
+  label_copy_project: Copiar proyecto
+  label_core_version: Versión base
+  label_current_status: Estado actual
+  label_current_version: Version actual
+  label_custom_field_new: Nuevo campo personalizado
+  label_custom_field_plural: Campos Personalizados
+  label_custom_field_default_type: Tipo vacío
+  label_date: Fecha
+  label_date_from: De
+  label_date_from_to: De %{start} al %{end}
+  label_date_range: Intervalo de fechas
+  label_date_to: Para
+  label_day_plural: días
+  label_default: Por defecto
+  label_deleted: borrado
+  label_deleted_custom_field: "(campo personalizado borrado)"
+  label_descending: Descendente
+  label_details: Detalles
+  label_diff: diff
+  label_diff_inline: en línea
+  label_diff_side_by_side: lado a lado
+  label_disabled: deshabilitado
+  label_display: Mostrar
+  label_display_per_page: 'Por página: %{value}'
+  label_display_used_statuses_only: Mostrar sólo los Estados utilizados por este tipo
+  label_download: "%{count} de descarga"
+  label_download_plural: "%{count} de descargas"
+  label_downloads_abbr: D/L
+  label_duplicated_by: duplicado por
+  label_duplicates: duplicados
+  label_enable_multi_select: Selección multiple
+  label_end_to_end: de punta a punta
+  label_end_to_start: finalizar para comenzar
+  label_enumeration_new: Nuevo valor de enumeración
+  label_enumerations: Enumeraciones
+  label_environment: Entorno
+  label_equals: es
+  label_example: Ejemplo
+  label_export_to: 'También disponible en:'
+  label_f_hour: "%{value} hora"
+  label_f_hour_plural: "%{value} horas"
+  label_feed_plural: Flujos
+  label_feeds_access_key: Código de acceso RSS
+  label_feeds_access_key_created_on: Código de acceso RSS creado hace %{value}
+  label_file_added: Archivo agregado
+  label_file_plural: Archivos
+  label_filesystem_path: Directorio raíz
+  label_filter_add: Añadir filtro
+  label_filter_plural: Filtros
+  label_float: Desprender
+  label_follows: sigue
+  label_force_user_language_to_default: Configurar idioma de usuarios que tienen un
+    lenguaje no permitido por defecto
+  label_general: General
+  label_generate_key: Generar una contraseña
+  label_git_path: Ruta al directorio .git
+  label_greater_or_equal: ">="
+  label_group_new: Nuevo grupo
+  label_group_plural: Grupos
+  label_help: Ayuda
+  label_here: aqui
+  label_hide: Ocultar
+  label_history: Historial
+  label_home: Inicio
+  label_in: en
+  label_in_less_than: en menos de
+  label_in_more_than: en más de
+  label_incoming_emails: Correos electrónicos entrantes
+  label_index_by_date: "Índice por fecha"
+  label_index_by_title: "Índice por título"
+  label_information: Información
+  label_information_plural: Información
+  label_integer: Número entero
+  label_internal: Interno
+  label_work_package_added: Paquete de trabajo añadido
+  label_work_package_category_new: Nueva categoría
+  label_work_package_category_plural: Categorías de paquete de trabajo
+  label_work_package_hierarchy: Jerarquía del paquete de trabajo
+  label_work_package_new: Nuevo paquete de trabajo
+  label_work_package_note_added: Nota de paquete de trabajo añadido
+  label_work_package_edit: Editar paquete de trabajo %{name}
+  label_work_package_plural: Paquetes de trabajo
+  label_work_package_priority_updated: Prioridad de trabajo paquete actualizado
+  label_work_package_status_new: Nuevo estatus
+  label_work_package_status_plural: Estatus del paquete de trabajo
+  label_work_package_tracking: Seguimiento de paquetes de trabajo
+  label_work_package_updated: Paquete de trabajo actualizado
+  label_work_package_view_all: Ver todos los paquetes de trabajo
+  label_work_package_view_all_assigned_to_me: Ver todos los paquetes de trabajo asignados
+    a mí
+  label_work_package_view_all_reported_by_me: Ver todos los paquetes de trabajo reportados
+    por mí
+  label_work_package_view_all_responsible_for: Ver todos los paquetes de trabajo que
+    soy responsable
+  label_work_package_view_all_watched: Ver todos los paquetes de trabajo controlados
+  label_work_package_watchers: Controladores
+  label_work_packages_by: Paquetes de trabajo por %{value}
+  label_journal_diff: Comparación de la descripción
+  label_jump_to_a_project: Saltar a un proyecto...
+  label_language_based: Basado en el idioma del usuario
+  label_last_changes: "últimos cambios %{count}"
+  label_last_login: Ultimó acceso
+  label_last_month: El mes pasado
+  label_last_n_days: "últimos %{count} días"
+  label_last_week: La semana pasada
+  label_latest_revision: "Última revisión"
+  label_latest_revision_plural: "Últimas revisiones"
+  label_ldap_authentication: Autenticación LDAP
+  label_less_or_equal: "<="
+  label_less_than_ago: menos que hace días
+  label_list: Lista
+  label_loading: Cargando...
+  label_logged_as: Sesión iniciada como
+  label_login: Ingresar
+  label_logout: Cerrar sesión
+  label_main_menu: Menú lateral
+  label_max_size: Tamaño máximo
+  label_me: mi
+  label_member_new: Nuevo miembro
+  label_member_plural: Miembros
+  label_menu_item_name: Nombre del elemento de menú
+  label_message_last: "Último mensaje"
+  label_message_new: Nuevo mensaje
+  label_message_plural: Mensajes
+  label_message_posted: Mensaje añadido
+  label_min_max_length: Tamaño mínimo-máximo
+  label_missing_api_access_key: Falta una llave de acceso API
+  label_missing_feeds_access_key: Falta una clave de acceso RSS
+  label_modification: cambio de %{count}
+  label_modification_plural: "%{count} cambios"
+  label_modified: modificado
+  label_module_plural: Módulos
+  label_modules: Módulos
+  label_month: Mes
+  label_months_from: meses desde
+  label_more: Más
+  label_more_than_ago: más días atrás
+  label_move_work_package: Mover el paquete de trabajo
+  label_my_account: Mi cuenta
+  label_my_account_data: Mis datos de cuenta
+  label_my_page: Mi página
+  label_my_page_block: Mi bloque de página
+  label_my_projects: Mis proyectos
+  label_my_queries: Mis consultas personalizadas
+  label_new: Nuevo
+  label_new_statuses_allowed: Nuevos estados permitidos
+  label_news_added: Noticias añadidas
+  label_news_comment_added: Comentario añadido a una noticia
+  label_news_latest: "Últimas noticias"
+  label_news_new: Añadir noticias
+  label_news_edit: Editar noticias
+  label_news_plural: Noticias
+  label_news_view_all: Ver todas las noticias
+  label_next: Siguiente
+  label_next_week: La próxima semana
+  label_no_change_option: "(No hay cambios)"
+  label_no_data: No hay datos disponibles
+  label_nobody: nadie
+  label_none: ninguno
+  label_not_contains: no contiene
+  label_not_equals: no es
+  label_notify_member_plural: Actualizaciones por correo electrónico
+  label_open_menu: Abrir menú
+  label_open_work_packages: abrir
+  label_open_work_packages_plural: abrir
+  label_optional_description: Descripción
+  label_options: Opciones
+  label_overall_activity: Actividad general
+  label_overall_spent_time: Tiempo total gastado
+  label_overview: Resumen
+  label_password_lost: Contraseña perdida
+  label_password_rule_lowercase: Minúscula
+  label_password_rule_numeric: Caracteres numéricos
+  label_password_rule_special: Caracteres especiales
+  label_password_rule_uppercase: Mayúscula
+  label_path_encoding: Ruta de codificación
+  label_pdf_with_descriptions: PDF con las descripciones
+  label_per_page: Por página
+  label_permissions: Permisos
+  label_permissions_report: Informe de permisos
+  label_personalize_page: Personalizar esta página
+  label_planning: Planificación
+  label_please_login: Por favor, identifíquese
+  label_plugins: Extensiones
+  label_precedes: precede
+  label_preferences: Preferencias
+  label_preview: Vista preliminar
+  label_previous: Anterior
+  label_previous_week: Semana anterior
+  label_principal_search: Buscar usuarios o grupos
+  label_profile: Perfil
+  label_project_all: Todos los proyectos
+  label_project_copy_notifications: Enviar notificaciones por correo electrónico durante
+    la copia del proyecto
+  label_project_latest: "Últimos proyectos"
+  label_project_default_type: Permitir tipo vacio
+  label_project_new: Nuevo proyecto
+  label_project_plural: Proyectos
+  label_project_settings: Configuración del proyecto
+  label_project_view_all: Ver todos los proyectos
+  label_public_projects: Proyectos públicos
+  label_query_new: Nueva consulta
+  label_query_plural: Consultas personalizadas
+  label_query_menu_item: Menú de consulta
+  label_read: Leer...
+  label_register: Crear una nueva cuenta
+  label_register_with_developer: Registrarse como desarrollador
+  label_registered_on: Registrado en
+  label_registration_activation_by_email: activación de cuenta por correo electrónico
+  label_registration_automatic_activation: activación automática de la cuenta
+  label_registration_manual_activation: activación manual de la cuenta
+  label_related_work_packages: Paquetes de trabajo relacionados
+  label_relates_to: relacionado con
+  label_relation_delete: Eliminar relación
+  label_relation_new: Nueva relación
+  label_remove_columns: Eliminar columnas seleccionadas
+  label_renamed: nombre cambiado
+  label_reply_plural: Respuestas
+  label_report: Informe
+  label_report_plural: Informes
+  label_reported_work_packages: Paquetes de trabajo reportados
+  label_reporting: Presentación de informe
+  label_reporting_plural: Presentacion de Informes
+  label_repository: Repositorio
+  label_repository_plural: Repositorios
+  label_responsible_for_work_packages: Soy responsable de estos paquetes de trabajo
+  label_result_plural: Resultados
+  label_reverse_chronological_order: En orden cronológico inverso
+  label_revision: Revisión
+  label_revision_id: Revisión %{value}
+  label_revision_plural: Revisiones
+  label_roadmap: Hoja de ruta
+  label_roadmap_edit: Editar ruta %{name}
+  label_roadmap_due_in: Válido en %{value}
+  label_roadmap_no_work_packages: No hay paquetes de trabajo para esta versión
+  label_roadmap_overdue: "%{value} tarde"
+  label_role_and_permissions: Roles y permisos
+  label_role_new: Nuevo rol
+  label_role_plural: Roles
+  label_role_search: Búsqueda de roles
+  label_scm: SCM
+  label_search: Buscar
+  label_search_titles_only: Buscar solamente títulos
+  label_send_information: Enviar información de la cuenta del usuario
+  label_send_test_email: Enviar un correo electrónico de prueba
+  label_settings: Configuración
+  label_show_completed_versions: Mostrar versiones terminadas
+  label_sort: Ordenar
+  label_sort_by: Ordenar por %{value}
+  label_sorted_by: ordenados por %{value}
+  label_sort_higher: Mueva hacia arriba
+  label_sort_highest: Arriba de todo
+  label_sort_lower: Mover hacia abajo
+  label_sort_lowest: Mover al final
+  label_spent_time: Tiempo empleado
+  label_start_to_end: de principio a fin
+  label_start_to_start: iniciar para iniciar
+  label_statistics: Estadísticas
+  label_status: Estado
+  label_status_updated: Estado del paquete de trabajo actualizado
+  label_stay_logged_in: Mantener sesión activa
+  label_string: Texto
+  label_subproject_new: Subproyecto nuevo
+  label_subproject_plural: Subproyectos
+  label_subtask_plural: Subtareas
+  label_summary: Resumen
+  label_system: Sistema
+  label_table_of_contents: Contenidos
+  label_tag: Etiqueta
+  label_text: Texto largo
+  label_theme: Tema
+  label_this_month: este mes
+  label_this_week: esta semana
+  label_this_year: este año
+  label_time_entry_plural: Tiempo empleado
+  label_time_tracking: Tiempo de seguimiento
+  label_today: hoy
+  label_top_menu: Menú superior
+  label_topic_plural: Temas
+  label_total: Total
+  label_type_new: Nuevo tipo
+  label_type_plural: Tipos
+  label_ui: Interfaz de usuario
+  label_update_work_package_done_ratios: Actualizar relación de paquetes de trabajo
+    ejecutados
+  label_updated_time: "%{value} actualizado hace"
+  label_updated_time_at: "%{author} %{age}"
+  label_updated_time_by: Actualizado por  %{author} %{age} hace
+  label_used_by: Utilizado por
+  label_user_activity: 'Actividad de %{value} '
+  label_user_anonymous: Anónimo
+  label_user_mail_no_self_notified: No quiero ser notificado de los cambios que hago
+    yo mismo
+  label_user_mail_option_all: Para cualquier evento en todos mis proyectos
+  label_user_mail_option_none: No hay eventos
+  label_user_mail_option_only_assigned: Sólo para cosas asignadas a mí
+  label_user_mail_option_only_my_events: Sólo para cosas que controlo o en las que
+    participo
+  label_user_mail_option_only_owner: Sólo para cosas de las que soy el dueño
+  label_user_mail_option_selected: Para cualquier evento sólo en proyectos seleccionados...
+  label_user_new: Nuevo usuario
+  label_user_plural: Usuarios
+  label_user_search: Búsqueda de usuario
+  label_version_new: Nueva versión
+  label_version_plural: Versiones
+  label_version_sharing_descendants: Con subproyectos
+  label_version_sharing_hierarchy: Con la jerarquía del proyecto
+  label_version_sharing_none: No compartido
+  label_version_sharing_system: Con todos los proyectos
+  label_version_sharing_tree: Con el árbol del proyecto
+  label_view_all_revisions: Ver todas las revisiones
+  label_view_diff: Ver diferencias
+  label_view_revisions: Ver revisiones
+  label_watched_work_packages: Paquetes de trabajos seguidos
+  label_week: Semana
+  label_wiki_content_added: Página wiki añadida
+  label_wiki_content_updated: Página wiki actualizada
+  label_wiki_toc: Contenidos
+  label_wiki_dont_show_menu_item: No mostrar esta página wiki en la navegación del
+    proyecto
+  label_wiki_edit: Editar Wiki
+  label_wiki_edit_plural: Ediciones Wiki
+  label_wiki_navigation: Navegación wiki
+  label_wiki_page: Página wiki
+  label_wiki_page_plural: Páginas Wiki
+  label_wiki_show_index_page_link: Mostrar el elemento de submenú 'Tabla de contenidos'
+  label_wiki_show_menu_item: Mostrar como elemento de menú de navegación de proyecto
+  label_wiki_show_new_page_link: Mostrar el elemento de submenú 'Crear nueva página
+    hija'
+  label_wiki_show_submenu_item: 'Mostrar como elemento de submenú de '
+  label_work_package: Paquete de trabajo
+  label_workflow: Flujo de trabajo
+  label_workflow_plural: Flujos de trabajo
+  label_workflow_summary: Resumen
+  label_x_closed_work_packages_abbr:
+    one: 1 closed
+    other: "%{count} closed"
+    zero: 0 closed
+  label_x_comments:
+    one: 1 comment
+    other: "%{count} comments"
+    zero: no comments
+  label_x_open_work_packages_abbr:
+    one: 1 open
+    other: "%{count} open"
+    zero: 0 open
+  label_x_open_work_packages_abbr_on_total:
+    one: 1 open / %{total}
+    other: "%{count} open / %{total}"
+    zero: 0 open / %{total}
+  label_x_projects:
+    one: 1 project
+    other: "%{count} projects"
+    zero: no projects
+  label_year: Año
+  label_yesterday: ayer
+  label_keyboard_function: Función
+  label_keyboard_shortcut: Acceso directo
+  label_keyboard_accesskey: Clave de acceso
+  label_keyboard_shortcut_help_heading: Métodos abreviados de teclado disponibles
+  label_keyboard_shortcut_within_project: 'Atajos de teclado relacionados:'
+  label_keyboard_shortcut_global_shortcuts: 'Atajos Globales:'
+  label_keyboard_shortcut_some_pages_only: 'Atajos de teclado especiales:'
+  label_keyboard_shortcut_search_global: Búsqueda global
+  label_keyboard_shortcut_search_project: Encontrar un proyecto
+  label_keyboard_shortcut_go_my_page: Ir a mi página
+  label_keyboard_shortcut_show_help: Mostrar este mensaje de ayuda
+  label_keyboard_shortcut_go_overview: Ir a la visión general del proyecto
+  label_keyboard_shortcut_go_work_package: Ir a paquetes de trabajo del proyecto
+  label_keyboard_shortcut_go_wiki: Ir al wiki del proyecto
+  label_keyboard_shortcut_go_activity: Ir a las actividades del proyecto
+  label_keyboard_shortcut_go_calendar: Ir al calendario del proyecto
+  label_keyboard_shortcut_go_news: Ir a noticias del proyecto
+  label_keyboard_shortcut_go_timelines: Ir a la línea del tiempo
+  label_keyboard_shortcut_new_work_package: Crear un nuevo paquete de trabajo
+  label_keyboard_shortcut_go_edit: Ir a editar el elemento actual (en las páginas
+    de detalle solamente)
+  label_keyboard_shortcut_open_more_menu: Abrir el menú mas (en las páginas de detalle
+    solamente)
+  label_keyboard_shortcut_go_preview: Vista preliminar de la edición actual (sólo
+    en páginas de edición)
+  label_keyboard_shortcut_focus_previous_item: Activar elemento de lista previo (solo
+    en algunas listas)
+  label_keyboard_shortcut_focus_next_item: Activar siguiente elemento de lista (sólo
+    en algunas listas)
+  macro_execution_error: Error ejecutando el macro %{macro_name}
+  macro_unavailable: Macro  %{macro_name} no puede ser mostrado.
+  mail_body_account_activation_request: 'Ha registrado un nuevo usuario (%{value}).
+    La cuenta está pendiente de aprobación:'
+  mail_body_account_information: Información de su cuenta
+  mail_body_account_information_external: Puede usar su %{value} cuenta para ingresar.
+  mail_body_lost_password: 'Para cambiar su contraseña, haga clic en el siguiente
+    enlace:'
+  mail_body_register: 'Para activar su cuenta, haga clic en el siguiente enlace:'
+  mail_body_reminder: "%{count} paquete(s) de trabajo que le fueron asignados vencen
+    en los próximos %{days}:"
+  mail_body_wiki_content_added: La página wiki de '%{id}' ha sido añadida por %{author}.
+  mail_body_wiki_content_updated: La página wiki de '%{id}' ha sido actualizada por
+    %{author}.
+  mail_subject_account_activation_request: solicitud de activación de cuenta de %{value}
+  mail_subject_lost_password: Su contraseña %{value}
+  mail_subject_register: La activación de la cuenta %{value}
+  mail_subject_reminder: "%{count} paquete(s) de trabajo pendientes en los siguientes
+    %{days} dias"
+  mail_subject_wiki_content_added: "'%{id}' wiki página ha sido agregada"
+  mail_subject_wiki_content_updated: "'%{id}' wiki página ha sido actualizada"
+  more_actions: Más funciones
+  noscript_description: Necesita activar JavaScript para poder usar OpenProject!
+  noscript_heading: JavaScript desactivado
+  noscript_learn_more: Saber más
+  notice_account_activated: Su cuenta ha sido activada. Ahora puede iniciar sesión.
+  notice_account_invalid_credentials: Usuario no válido o la contraseña
+  notice_account_invalid_credentials_or_blocked: Usuario no válido o la contraseña
+    o la cuenta está bloqueada debido a múltiples intentos de inicio de sesión fallidos.
+    Si es así, se desbloquea automáticamente en poco tiempo.
+  notice_account_lost_email_sent: Se le envió un correo electrónico con instrucciones
+    para elegir una nueva contraseña.
+  notice_account_new_password_forced: Se requiere una contraseña nueva.
+  notice_account_password_expired: Su contraseña expiró después de %{days} días. Por
+    favor seleccione uno nuevo.
+  notice_account_password_updated: Contraseña se actualizó correctamente.
+  notice_account_pending: Su cuenta fue creada y ahora está pendiente de aprobación
+    del administrador.
+  notice_account_register_done: Cuenta se ha creado correctamente. Para activar su
+    cuenta, haga clic en el enlace que fue enviado a su email.
+  notice_account_unknown_email: Usuario desconocido.
+  notice_account_update_failed: No se pudieron salvar los ajustes de la cuenta. Por
+    favor revise en la página de su cuenta.
+  notice_account_updated: Cuenta se actualizó correctamente.
+  notice_account_wrong_password: Contraseña incorrecta
+  notice_account_registered_and_logged_in: Bienvenido, tu cuenta ha sido activada.
+    Ahora estás logueado.
+  notice_api_access_key_reseted: Su API de acceso ha sido re-iniciada.
+  notice_can_t_change_password: Esta cuenta utiliza una fuente de autenticación externa.
+    Es imposible cambiar la contraseña.
+  notice_default_data_loaded: Configuración por defecto carga correctamente.
+  notice_email_error: Un error ha ocurrido mientras se enviaba el correo (%{value})
+  notice_email_sent: Se envió un correo electrónico a % {value}
+  notice_failed_to_save_work_packages: 'Fallo al salvar %{count} paquete(s) de trabajo
+    en %{total} seleccionado: %{ids}.'
+  notice_failed_to_save_members: 'Fallo al salvar miembro(s): %{errors}.'
+  notice_feeds_access_key_reseted: Su clave de acceso RSS ha sido re-iniciada.
+  notice_file_not_found: La página que estaba intentando acceder no existe o ha sido
+    eliminada.
+  notice_forced_logout: Su sesión ha sido cerrada automáticamente después de %{ttl_time}
+    minutos de inactividad.
+  notice_internal_server_error: Ha ocurrido un error en la página que usted trato
+    de acceder. Si usted continua teniendo problemas por favor contacte su administrador
+    de %{app_title} para asistencia.
+  notice_work_package_done_ratios_updated: Ratio actualizado para finalizar de paquete
+    de trabajo.
+  notice_locking_conflict: La información ha sido actualizada por al menos otro usuario
+    mientras tanto.
+  notice_locking_conflict_additional_information: La(s) actualización(es) hecha(s)
+    por %{users}.
+  notice_locking_conflict_reload_page: Por favor recargue la página, revise los cambios
+    y re-aplique las actualizaciones.
+  notice_no_principals_found: No se encontraron resultados.
+  notice_bad_request: Petición incorrecta.
+  notice_not_authorized: No está autorizado a acceder a esta página.
+  notice_not_authorized_archived_project: El proyecto que usted esta tratando de acceder
+    ha sido archivado.
+  notice_project_not_deleted: El proyecto no fue eliminado.
+  notice_successful_connection: Conexión exitosa.
+  notice_successful_create: Creación exitosa.
+  notice_successful_delete: Eliminado con éxito.
+  notice_successful_update: Actualización correcta.
+  notice_to_many_principals_to_display: |
+    Hay demasiados resultados.
+    Afine la búsqueda ingresando el nombre del nuevo miembro (o grupo).
+  notice_unable_delete_time_entry: No es posible eliminar la entrada de registro de
+    hora.
+  notice_unable_delete_version: No se puede eliminar la versión.
+  notice_automatic_set_of_standard_type: Establecer tipo estándar automáticamente.
+  notice_logged_out: Has cerrado la sesion.
+  error_types_in_use_by_work_packages: 'Los siguientes tipos siguen referenciados
+    por paquetes de trabajo: %{types}'
+  number:
+    format:
+      delimiter: ''
+      precision: 3
+      separator: "."
+    human:
+      format:
+        delimiter: ''
+        precision: 1
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: kB
+          mb: MB
+          tb: TB
+  permission_add_work_package_notes: Añadir notas
+  permission_add_work_packages: Añadir paquetes de trabajo
+  permission_add_messages: Publicar mensajes
+  permission_add_project: Crear proyecto
+  permission_add_subprojects: Crear subproyectos
+  permission_add_work_package_watchers: Agregar observadores
+  permission_browse_repository: Explorar repositorio
+  permission_change_wiki_parent_page: Cambiar wiki pagina madre
+  permission_comment_news: Comentar noticias
+  permission_commit_access: Acceso de compromiso
+  permission_copy_projects: Copiar proyectos
+  permission_delete_work_package_watchers: Eliminar los observadores
+  permission_delete_work_packages: Eliminar paquetes de trabajo
+  permission_delete_messages: Eliminar mensajes
+  permission_delete_own_messages: Borrar los mensajes propios
+  permission_delete_project_associations: Eliminar dependencias de proyecto
+  permission_delete_reportings: Eliminar reportes
+  permission_delete_timelines: Eliminar líneas de tiempo
+  permission_delete_wiki_pages: Eliminar wiki página
+  permission_delete_wiki_pages_attachments: Eliminar adjuntos
+  permission_edit_work_package_notes: Editar notas
+  permission_edit_work_packages: Editar paquetes de trabajo
+  permission_edit_messages: Editar mensajes
+  permission_edit_own_work_package_notes: Editar notas propias
+  permission_edit_own_messages: Editar mensajes propios
+  permission_edit_own_time_entries: Editar registros de tiempo propios
+  permission_edit_project: Editar proyecto
+  permission_edit_project_associations: Editar dependencias de proyecto
+  permission_edit_reportings: Editar reportes
+  permission_edit_time_entries: Editar registros de tiempo
+  permission_edit_timelines: Editar líneas de tiempo
+  permission_edit_wiki_pages: Editar wiki página
+  permission_export_work_packages: Exportar Paquetes de Trabajo
+  permission_export_wiki_pages: Exportar wiki página
+  permission_list_attachments: Lista archivos adjuntos
+  permission_log_time: Registro de tiempo empleado
+  permission_manage_boards: Administrar foros
+  permission_manage_categories: Administrar categorías del paquete de trabajo
+  permission_manage_work_package_relations: Gestionar las relaciones del paquete de
+    trabajo
+  permission_manage_members: Gestión de Miembros
+  permission_manage_news: Administrar noticias
+  permission_manage_project_activities: Gestionar actividades del proyecto
+  permission_manage_public_queries: Administrar consultas públicas
+  permission_manage_repository: Gestionar repositorio
+  permission_manage_subtasks: Gestionar subtareas
+  permission_manage_versions: Administrar versiones
+  permission_manage_wiki: Administrar wiki
+  permission_manage_wiki_menu: Administrar menú wiki
+  permission_move_work_packages: Mover paquetes de trabajo
+  permission_protect_wiki_pages: Proteger páginas wiki
+  permission_rename_wiki_pages: Renombrar páginas wiki
+  permission_save_queries: Guardar consultas
+  permission_select_project_modules: Seleccionar módulos de proyecto
+  permission_manage_types: Seleccionar Tipos
+  permission_view_calendar: Ver calendario
+  permission_view_changesets: Ver conjunto de cambios
+  permission_view_commit_author_statistics: Ver estadísticas de compromisos del autor
+  permission_view_work_package_watchers: Ver lista de observadores
+  permission_view_work_packages: Ver Paquetes de Trabajo
+  permission_view_messages: Ver mensajes
+  permission_view_project_associations: Ver dependencias de proyecto
+  permission_view_reportings: Ver reportes
+  permission_view_time_entries: Ver tiempo empleado
+  permission_view_timelines: Ver líneas de tiempo
+  permission_view_wiki_edits: Ver historial wiki
+  permission_view_wiki_pages: Ver wiki
+  project_module_activity: Actividad
+  project_module_boards: Foros
+  project_module_calendar: Calendario
+  project_module_work_package_tracking: Seguimiento de paquetes de trabajo
+  project_module_news: Noticias
+  project_module_repository: Repositorio
+  project_module_time_tracking: Tiempo de seguimiento
+  project_module_wiki: Wiki
+  query_fields:
+    assigned_to_role: Asignación de roles
+    member_of_group: Asignación de grupo
+    subproject_id: Subproyecto
+  search_input_placeholder: buscar ...
+  setting_activity_days_default: Días mostrados en actividad de proyecto
+  setting_app_subtitle: Subtítulo de aplicación
+  setting_app_title: Título de aplicación
+  setting_attachment_max_size: Tamaño máximo de adjunto
+  setting_autofetch_changesets: Captura automática de compromisos
+  setting_autologin: Inicio de sesión automático
+  setting_available_languages: Idiomas disponibles
+  setting_bcc_recipients: Destinatarios con copia carbon oculta (cco)
+  setting_brute_force_block_after_failed_logins: Bloquear usuario después de este
+    numero de intentos de inicio de sesión fallidos (desactivado con 0)
+  setting_brute_force_block_minutes: Tiempo que el usuario esta bloqueado por (minutos)
+  setting_cache_formatted_text: Texto formateado del cache
+  setting_column_options: Personalizar la apariencia de las listas de paquete te trabajo
+  setting_commit_fix_keywords: Reparando palabras clave
+  setting_commit_logs_encoding: Codificación de mensajes de compromiso
+  setting_commit_logtime_activity_id: Actividad para tiempo registrado
+  setting_commit_logtime_enabled: Activar registro de tiempo
+  setting_commit_ref_keywords: Referenciando palabras clave
+  setting_cross_project_work_package_relations: Permitir relaciones cruzadas en paquetes
+    de trabajo de proyecto
+  setting_date_format: Formato de fecha
+  setting_default_language: Idioma predeterminado
+  setting_default_notification_option: Opción de notificación predeterminada
+  setting_default_projects_modules: Modulos activados por defecto para nuevos proyectos
+  setting_default_projects_public: Nuevos proyectos son públicos por defecto
+  setting_diff_max_lines_displayed: Cantidad máxima de diferencias de lineas mostradas
+  setting_display_subprojects_work_packages: Mostrar paquetes de trabajo de subproyectos
+    en proyectos principales por defecto
+  setting_emails_footer: Pie de correos electronicos
+  setting_emails_header: Encabezado de correos electrónicos
+  setting_enabled_scm: SCM activado
+  setting_feeds_enabled: Activar Feeds
+  setting_feeds_limit: Limite de contenido de feed
+  setting_file_max_size_displayed: Tamaño máximo de archivos de texto mostrado en
+    linea
+  setting_gravatar_default: Imagen de gravatar por defecto
+  setting_gravatar_enabled: Usar iconos de gravatar de usuario
+  setting_host_name: Nombre de host
+  setting_work_package_done_ratio: Calcular la relacion de paquete de trabajo hecho
+    con
+  setting_work_package_done_ratio_field: Usar el campo de paquete de trabajo
+  setting_work_package_done_ratio_status: Usar el estado del paquete de trabajo
+  setting_work_package_done_ratio_disabled: Desactivar (oculta el progreso)
+  setting_work_package_list_default_columns: Mostrar por defecto
+  setting_work_package_list_summable_columns: Sumable
+  setting_work_package_properties: Propiedades de paquete de trabajo
+  setting_work_package_startdate_is_adddate: Usar fecha actual como fecha de inicio
+    para nuevos paquetes de trabajo
+  setting_work_packages_export_limit: Fecha limite para exportar paquete de trabajo
+  setting_log_requesting_user: Registrar inicio de sesión de usuario, nombre, y dirección
+    de correo para todas las solicitudes
+  setting_login_required: Autentificación requerida
+  setting_mail_from: Dirección de correo electrónico de emision
+  setting_mail_handler_api_enabled: Activar WS para correos entrantes
+  setting_mail_handler_api_key: Clave API
+  setting_mail_handler_body_delimiters: Truncar los correos electrónicos después de
+    una de estas líneas
+  setting_new_project_user_role_id: Papel ortorgado a usuario no administrador que
+    crea un proyecto
+  setting_password_active_rules: Activar clases de personajes
+  setting_password_count_former_banned: Numero de contraseñas usadas mas recientemente
+    bloqueadas para re-uso
+  setting_password_days_valid: Numero de días, después de los que será obligatorio
+    el cambio de contraseña (desactivar con 0)
+  setting_password_min_length: Longitud mínima
+  setting_password_min_adhered_rules: Numero mínimo de clases requeridas
+  setting_per_page_options: Objetos por página de opciones
+  setting_plain_text_mail: Correo en texto plano (sin HTML)
+  setting_protocol: Protocolo
+  setting_repositories_encodings: Codificación de Repositorios
+  setting_repository_authentication_caching_enabled: Habilitar el almacenamiento en
+    cache para las solicitudes de autenticacion del software de control de version
+  setting_repository_log_display_limit: Numero máximo de revisiones mostradas en el
+    archivo de registro
+  setting_rest_api_enabled: Activar servicio web REST
+  setting_self_registration: Auto-registro
+  setting_sequential_project_identifiers: Generar identificadores secuenciales de
+    proyecto
+  setting_session_ttl: Tiempo de expiración de sesión por inactividad
+  setting_session_ttl_hint: Valor por debajo de 5 peticiones como desactivadas
+  setting_session_ttl_enabled: La sesión expira
+  setting_start_of_week: Comienzo del calendario
+  setting_sys_api_enabled: Habilitar WS para administración del repositorio
+  setting_text_formatting: Formato de texto
+  setting_time_format: Formato de hora
+  setting_ui_theme: Tema
+  setting_user_may_override_theme: Los usuarios pueden elegir sus propios temas
+  setting_accessibility_mode_for_anonymous: Activar el modo de accesibilidad para
+    usuarios anónimos
+  setting_user_format: Formato de visualización de usuarios
+  setting_users_deletable_by_admins: Cuentas de usuario eliminables por administradores
+  setting_users_deletable_by_self: Permitir a los usuarios eliminar sus propias cuentas
+  setting_welcome_text: Texto de bienvenida
+  setting_wiki_compression: Comprensión del historial del Wiki
+  setting_work_package_group_assignment: Permite la asignación a grupos
+  settings:
+    general: General
+    other: Otros
+    passwords: Contraseñas
+    session: Sesión
+    brute_force_prevention: Bloqueo automático de usuarios
+  show_hide_project_menu: Mostrar/Ocultar menú del proyecto
+  status_active: activo
+  support:
+    array:
+      sentence_connector: y
+      skip_last_comma: falso
+  text_analyze: 'Análisis futuro: %{subject}'
+  text_are_you_sure: "¿Estás seguro?"
+  text_are_you_sure_with_children: "¿Eliminar el paquete de trabajo y todos sus paquetes
+    dependientes?"
+  text_assign_to_project: Asignar al proyecto
+  text_caracters_maximum: "% {count} caracteres máximo."
+  text_caracters_minimum: Debe tener al menos %{count} caracteres de largo.
+  text_comma_separated: Permitir múltiples valores (separados por comas).
+  text_custom_field_possible_values_info: Una línea para cada valor
+  text_default_administrator_account_changed: Se ha cambiado la cuenta de administrador
+    por defecto
+  text_default_encoding: 'Por defecto: UTF-8'
+  text_destroy: Borrar
+  text_destroy_with_associated: 'Hay objetos adicionales asociados a los paquetes
+    de trabajo que van a ser eliminados. Esos objetos son de los siguientes tipos:'
+  text_destroy_what_to_do: "¿Qué quieres hacer?"
+  text_diff_truncated: "... Esta diferencia se truncó porque excede el tamaño máximo
+    que puede visualizarse."
+  text_email_delivery_not_configured: "El envío de correo electrónico no está configurado
+    y las notificaciones estan deshabilitadas. \nConfigure su servidor SMTP en config/configuration.yml
+    y reinicie la aplicación para habilitarlas."
+  text_enumeration_category_reassign_to: 'Reasignarlos a este valor:'
+  text_enumeration_destroy_question: "% {count} objetos han sido asignados a este
+    valor."
+  text_file_repository_writable: Directorio de adjuntos escribible
+  text_git_repo_example: un repositorio local y vacío (por ejemplo /gitrepo, c:\gitrepo)
+  text_work_package_added: Los paquetes de trabajo %{id} han sido actualizados por
+    %{author}.
+  text_work_package_category_destroy_assignments: Remover asignaciones de categorias
+  text_work_package_category_destroy_question: Algunos paquetes de trabajo (%{count})
+    están asignados a esta categoría. ¿Que desea hacer?
+  text_work_package_category_reassign_to: Resignando paquetes de trabajo a esta categoria
+  text_work_package_updated: Los paquetes de trabajo %{id} han sido actualizados por
+    %{author}.
+  text_work_packages_destroy_confirmation: "¿Esta usted seguro que desea eliminar
+    paquete(s) de trabajo seleccionado(s)?"
+  text_work_packages_ref_in_commit_messages: Referenciando y reparando paquetes de
+    trabajo en mensajes de compromiso
+  text_journal_added: "%{label} %{value} añadido"
+  text_journal_changed: "%{label} cambiada del %{old} al %{new}"
+  text_journal_changed_no_detail: "% {label} actualizado"
+  text_journal_changed_with_diff: "%{label} modificado (% {link})"
+  text_journal_deleted: "%{label} eliminado (% {old})"
+  text_journal_deleted_with_diff: "%{label} eliminado (% {link})"
+  text_journal_set_to: "%{label} establecido al %{value}"
+  text_journal_set_with_diff: "%{label} fijado (%{link})"
+  text_length_between: Longitud entre %{min} y %{max} caracteres.
+  text_line_separated: Múltiples valores permitidos (una línea para cada valor).
+  text_load_default_configuration: Cargar la configuración predeterminada
+  text_min_max_length_info: 0 significa sin restricción
+  text_no_configuration_data: Roles, tipos, estado de petición y flujo de trabajo
+    no han sido configurados. Se recomienda cargar la configuración por defecto. Podrá
+    modificarla cuando haya sido cargada.
+  text_notice_too_many_values_are_inperformant: 'Nota: Si se muestran más de 100 elementos
+    por página puede incrementar el tiempo de carga de la página.'
+  text_own_membership_delete_confirmation: "Usted está a punto de eliminar algunos
+    o todos sus permisos y después no será posible editar este proyecto. \n ¿está
+    seguro que desea continuar?"
+  text_plugin_assets_writable: Directorio de Plugins activos escribible
+  text_powered_by: Con tecnología de %{link}
+  text_project_destroy_confirmation: "¿Está seguro que desea eliminar este proyecto
+    y los datos relacionados?"
+  text_project_identifier_info: Se permiten sólo letras minúsculas (a-z), números,
+    guiones y guiones bajos, debe comenzar con una letra minúscula.
+  text_reassign: Reasignar a
+  text_reassign_to: 'paquete de trabajo:'
+  text_regexp_info: eg. ^[A-Z0-9]+$
+  text_repository_usernames_mapping: Seleccione o actualize el usuario de OpenProject
+    asignado a cada nombre en el registro del repositorio. Los usuarios con el mismo
+    nombre o email serán mapeados automáticamente.
+  text_select_mail_notifications: Seleccione las acciones que serán notificadas por
+    correo.
+  text_select_project_modules: 'Seleccione los módulos activados para este proyecto:'
+  text_status_changed_by_changeset: Aplicado en el conjunto de cambios %{value}.
+  text_subprojects_destroy_warning: 'Su subproyecto(s): %{value} serán también eliminados.'
+  text_time_logged_by_changeset: Aplicado en el conjunto de cambios %{value}.
+  text_tip_work_package_begin_day: paquete de trabajo comienza este día
+  text_tip_work_package_begin_end_day: paquete de trabajo comienza y termina este
+    día
+  text_tip_work_package_end_day: paquete de trabajo finalizado este día
+  text_type_no_workflow: No hay flujo de trabajo definido para este tipo
+  text_unallowed_characters: Caracteres no permitidos
+  text_user_mail_option: Para los proyectos no seleccionados, sólo recibirá notificaciones
+    sobre asuntos en seguimiento o participados (ej. paquetes de trabajo en el que  eres
+    autor o cesionario).
+  text_user_wrote: "%{value} escribió:"
+  text_warn_on_leaving_unsaved: La página actual contiene texto no guardado que se
+    perderá si usted abandona esta página.
+  text_wiki_destroy_confirmation: "¿Está seguro que desea eliminar este wiki y todo
+    su contenido?"
+  text_wiki_page_destroy_children: Eliminar páginas hijas y todos sus descendientes
+  text_wiki_page_destroy_question: Esta página tiene %{descendants} página(s) hijas
+    y descendiente(s). ¿Qué quiere hacer?
+  text_wiki_page_nullify_children: Guardar páginas hijas como páginas principales
+  text_wiki_page_reassign_children: Reasignar páginas hijas a esta página padre
+  text_workflow_edit: Seleccione un rol y un tipo para modificar el flujo de trabajo
+  text_zoom_in: Acercar
+  text_zoom_out: Alejar
+  time:
+    am: AM
+    formats:
+      default: "%m/%d/%Y %I:%M %p"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+      time: "%I:%M %p"
+    pm: pm
+  timelines:
+    admin_menu:
+      color: Color
+      colors: Colores
+      project_type: Tipo de proyecto
+      project_types: Tipos de proyecto
+    project_menu:
+      planning_elements: Elementos de planificación
+      project_associations: Dependencias
+      reportings: Informes de estado
+      reports: Informes de cronograma
+      timelines: Líneas de tiempo
+    add_project_association: Añadir dependencia
+    associations: Dependencias
+    board_could_not_be_saved: La tarjeta no a sido grabada
+    button_delete_all: Borrar todo
+    change: Cambio en la planificación
+    children: Elementos secundarios
+    color_could_not_be_saved: Color no puede ser salvado
+    current_planning: Planificación actual
+    dates: Fechas
+    dates_are_calculated_based_on_sub_elements: Las fechas se calculan basándose en
+      sub elementos.
+    delete_all: Borrar todo
+    delete_thing: Borrar
+    duration: Duración
+    duration_days:
+      one: 1 day
+      other: "%{count} days"
+    edit_color: Editar colores
+    edit_project_type: Editar tipo de proyecto
+    edit_thing: Editar
+    edit_timeline: Edición del informe de tiempos %{timeline}
+    delete_timeline: Eliminar informe de linea de tiempo
+    empty: "(vacío)"
+    enable_type_in_project: Habilitar tipo "%{type}"
+    end: Final
+    errors:
+      not_implemented: La línea de tiempo no puede procesarse porque utiliza una característica
+        que no se ha implementado todavía.
+      report_comparison: La línea de tiempo no puede hacer las comparaciones configuradas.
+        Consulte la sección pertinente en la configuración, re-iniciarla puede ayudar
+        a resolver este problema.
+      report_epicfail: No se pudo cargar la línea de tiempo debido a un error inesperado.
+      report_timeout: No se pudo cargar la línea de tiempo en una cantidad razonable
+        de tiempo.
+    filter:
+      errors:
+        timeframe_start: 'El comienzo del plazo '
+        timeframe_end: El plazo final 
+        compare_to_relative: 'El valor de la comparación relativa '
+        compare_to_absolute: 'El valor de la comparación absoluta '
+        planning_element_time_relative_one: 'El comienzo para los paquetes de trabajo
+          en un cierto plazo '
+        planning_element_time_relative_two: 'Al final de los paquetes de trabajo en
+          un cierto plazo '
+        planning_element_time_absolute_one: 'El comienzo para los paquetes de trabajo
+          en un cierto plazo  '
+        planning_element_time_absolute_two: 'Al final de los paquetes de trabajo en
+          un cierto plazo  '
+      sort:
+        sortation: Ordenar por
+        alphabet: alfabeto
+        explicit_order: orden explícita
+        project_sortation: Ordenar proyectos por
+        date: fecha
+        default: por defecto
+      column:
+        assigned_to: Asignado a
+        type: Tipo
+        due_date: Fecha de finalización
+        name: Nombre
+        status: Estado
+        responsible: Responsable
+        start_date: Fecha de inicio
+      columns: Columnas
+      comparisons: Comparaciones
+      comparison:
+        absolute: Absoluto
+        none: Ninguno
+        relative: Relativo
+        compare_relative: Comparar la planificación actual hace %{timespan}
+        compare_absolute: Comparar la planificación actual al %{date}
+      time_relative:
+        days: días
+        weeks: semanas
+        months: meses
+      exclude_own_work_packages: Ocultar los paquetes de trabajo de este proyecto
+      exclude_reporters: Ocultar otros proyectos
+      exclude_empty: Esconder proyectos vacíos
+      grouping: Agrupación
+      grouping_hide_group: Ocultar grupo "%{group}"
+      grouping_one: Primer criterio de agrupamiento
+      grouping_one_phrase: Es un subproyecto de
+      grouping_other: Otros
+      grouping_two: Segundo criterio de agrupamiento
+      grouping_two_phrase: Tiene una dependencia de tipo de proyecto
+      hide_chart: Ocultar gráfica
+      noneElement: "(ninguno)"
+      noneSelection: "(ninguno)"
+      outline: Extensión del esquema inicial
+      parent: Mostrar los subproyectos de
+      work_package_filters: Filtro de paquetes de trabajo
+      work_package_responsible: Mostrar los paquetes de trabajo con responsables
+      work_package_assignee: Mostrar paquetes con asignado
+      types: Mostrar tipos
+      status: Mostrar estado
+      project_time_filter: Proyectos con paquete de trabajo de un tipo determinado
+        en un plazo
+      project_time_filter_absolute_timeframe: Marco de tiempo absoludo
+      project_time_filter_relative_timeframe: Plazo relativo
+      project_time_filter_historical_from: De
+      project_time_filter_historical_to: a
+      project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
+      project_time_filter_relative: "%{start_label} %{startspan}%{startspanunit} hace,
+        %{end_label} %{endspan}%{endspanunit} desde ahora"
+      project_filters: Filtrar proyectos
+      project_responsible: Mostrar proyectos con responsables
+      project_status: Mostrar estado del proyecto
+      project_types: Mostrar tipos de proyecto
+      timeframe: Mostrar calendario
+      timeframe_end: a
+      timeframe_start: De
+      timeline: Ajustes generales
+      zoom: Factor de zoom
+    history: Historial
+    new_color: Nuevo color
+    new_association: Nueva dependencia
+    new_work_package: Nuevo paquete de trabajo
+    new_project_type: Nuevo tipo de proyecto
+    new_reporting: Nuevos informes
+    new_timeline: Nuevo informe de línea de tiempo
+    no_projects_for_reporting_available: No hay proyectos disponibles para generar
+      informes.
+    no_right_to_view_timeline: No tienes el permiso necesario para ver la línea de
+      tiempo vinculada.
+    no_timeline_for_id: No hay ninguna línea de tiempo con el ID %{id}.
+    notice_successful_deleted_all_elements: Eliminó correctamente todos los elementos
+    outline: Restablecer marco
+    outlines:
+      aggregation: Mostrar sólo las agregaciones
+      level1: Ampliar nivel 1
+      level2: Ampliar nivel 2
+      level3: Ampliar nivel 3
+      level4: Ampliar nivel 4
+      level5: Ampliar el nivel 5
+      all: Mostrar todo
+    reporting_for_project:
+      show: 'Estado reportado al proyecto: %{title}'
+      edit_delete: 'Informe de estado para el proyecto: %{title}'
+      history: 'Historia de estado del proyecto: %{title}'
+    reporting:
+      delete: 'Eliminar estado: %{comment}'
+      edit: 'Editar estado: %{comment}'
+      show: 'Estado: %{comment}'
+    planning_element_update: 'Actualizado: %{title}'
+    work_packages_are_displayed_in_aggregations: Los paquetes de trabajo aparecen
+      en agregaciones
+    project_association_new: Añadir dependencia de proyectos
+    project_association_new_for_with: Establecer dependencia para “%{project_a}” con
+    project_association_with_other: Dependencia de proyectos entre “%{project_a}”
+      y “%{project_b}”
+    project_association_of_type: Dependencia a proyecto de tipo "%{type}"
+    project_type_could_not_be_saved: No se pudo guardar el tipo de proyecto
+    type_could_not_be_saved: No se pudo guardar el tipo
+    reporting_could_not_be_saved: No se ha podido guardar el informe
+    properties: Propiedades
+    really_delete_color: "¿Esta seguro que desea eliminar el siguiente color? Los
+      tipos que usan este color no se eliminarán."
+    really_delete_project_association_between_project_a_and_project_b: "¿Esta seguro
+      que desea eliminar la dependencia entre '%{project_a}' y '%{project_b}'?"
+    really_delete_project_type: "¿Estás seguro que desea eliminar el siguiente tipo
+      de proyecto? Los proyectos que usan este tipo no se eliminarán."
+    really_delete_timeline: "¿Estás seguro que desea eliminar el siguiente informe
+      de línea de tiempo? No se eliminarán los paquetes de trabajo mostrados en este
+      informe de línea de tiempo."
+    really_delete_reporting: "¿Esta seguro que desea eliminar el siguiente informe?
+      Los informes de estados anteriores se eliminaran, también."
+    start: Inicio
+    timeline: Informe de línea de tiempo
+    timelines: Informes de cronograma
+    settings: Líneas de tiempo
+    vertical_work_package: Paquetes de trabajo vertical
+    without_project_type: Sin tipo de proyecto
+    you_are_viewing_the_selected_timeline: Usted está viendo el informe de línea de
+      tiempo seleccionado
+    zoom:
+      in: Acercar
+      out: Alejar
+      days: Días
+      weeks: Semanas
+      months: Meses
+      quarters: Cuatrimestres
+      years: Años
+  queries:
+    apply_filter: Aplicar filtro preconfigurado
+  total_progress: Progreso total
+  user:
+    all: todos
+    active: activo
+    activate: Activar
+    activate_and_reset_failed_logins: Activar y restablecer los inicios de sesión
+      fallidos
+    authentication_provider: Proveedor de autenticación
+    authentication_settings_disabled_due_to_external_authentication: Este usuario
+      se autentica mediante un proveedor de autenticación externa, así que no hay
+      ninguna contraseña en OpenProject para ser cambiada.
+    assign_random_password: Asignar contraseñas aleatorias (enviado al usuario por
+      correo electrónico)
+    blocked: bloqueado temporalmente
+    blocked_num_failed_logins:
+      one: locked temporarily (one failed login attempt)
+      other: locked temporarily (%{count} failed login attempts)
+    deleted: Usuario eliminado
+    error_status_change_failed: 'Cambiar la condición de usuario falló debido a los
+      errores siguientes: %{errors}'
+    lock: Bloquear permanentemente
+    locked: bloqueado permanentemente
+    registered: Registrado
+    reset_failed_logins: Resetear los inicios de sesión fallidos
+    status_user_and_brute_force: "%{user} y %{brute_force}"
+    unlock: Desbloquear
+    unlock_and_reset_failed_logins: Desbloquear y resetear los inicios de sesión fallidos
+    no_login: Este usuario se autentica a través de acceso por contraseña. Puesto
+      que está deshabilitado, no puede entrar.
+    password_change_unsupported: No se admite el cambio de contraseña.
+    authorization_rejected: No tienes permitido iniciar sesion.
+  version_status_closed: cerrado
+  version_status_locked: bloqueado
+  version_status_open: abrir
+  note: Nota
+  note_password_login_disabled: El inicio de sesion por contraseña ha sido deshabilitado
+    por %{configuration}.
+  warning: Alerta
+  warning_attachments_not_saved: "%{count} archivo(s) no podrán ser salvados."
+  menu_item: Elemento de menú
+  menu_item_setting: Visibilidad
+  wiki_menu_item_for: Elemento de menú para wiki '%{title}'
+  wiki_menu_item_setting: Visibilidad
+  wiki_menu_item_new_main_item_explanation: Usted esta eliminando el único elemento
+    de menú wiki principal. Ahora tiene que elegir un wiki para el cual un nuevo elemento
+    de menú principal será generado. Para eliminar el wiki, éste módulo puede ser
+    desactivado por los administradores del proyecto.
+  wiki_menu_item_delete_not_permitted: El único elemento de menú de la única página
+    wiki no puede ser eliminado.
+  query_menu_item_for: Elemento de menu para consulta "%{title}"
+  work_package:
+    updated_automatically_by_child_changes: _Actualizado automáticamente cambiando
+      los valores en el paquete de trabajo hijo %{child}_
+  nothing_to_preview: Nada para previsualizar

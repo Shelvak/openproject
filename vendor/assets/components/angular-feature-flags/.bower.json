@@ -1,0 +1,12 @@
+{
+  "name": "angular-feature-flags",
+  "homepage": "https://github.com/mjt01/angular-feature-flags",
+  "_release": "ca40201e22",
+  "_resolution": {
+    "type": "commit",
+    "commit": "ca40201e2279777dc3820c783f60f845cefff731"
+  },
+  "_source": "git://github.com/mjt01/angular-feature-flags.git",
+  "_target": "ca40201e2279777dc3820c783f60f845cefff731",
+  "_originalSource": "mjt01/angular-feature-flags"
+}
