@@ -177,7 +177,11 @@ class WorkPackagesController < ApplicationController
   def update
     safe_params = permitted_params.update_work_package(project: project)
 
-    update_service = UpdateWorkPackageService.new(current_user, work_package, safe_params, send_notifications?)
+    update_service = UpdateWorkPackageService.new(
+      user: current_user,
+      work_package: work_package,
+      permitted_params: safe_params,
+      send_notifications: send_notifications?)
 
     updated = update_service.update
 
@@ -425,7 +429,7 @@ class WorkPackagesController < ApplicationController
   end
 
   def send_notifications?
-    params[:send_notification] == '0' ? false : true
+    params[:send_notification] != '0'
   end
 
   def per_page_param

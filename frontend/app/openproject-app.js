@@ -30,10 +30,14 @@ var I18n = require('./vendor/i18n');
 
 // standard locales
 I18n.translations.en = require("locales/js-en.yml").en;
-I18n.translations.de = require("locales/js-de.yml").de;
 
 I18n.addTranslations = function(locale, translations) {
-  I18n.translations[locale] = _.merge(I18n.translations[locale], translations);
+  if (I18n.translations[locale] === undefined) {
+    I18n.translations[locale] = translations;
+  }
+  else {
+    I18n.translations[locale] = _.merge(I18n.translations[locale], translations);
+  }
 };
 
 require('angular-animate');
@@ -195,7 +199,7 @@ openprojectApp
       $locationProvider.html5Mode(true);
       $httpProvider.defaults.headers.common['X-CSRF-TOKEN'] = jQuery(
         'meta[name=csrf-token]').attr('content'); // TODO find a more elegant way to keep the session alive
-
+      $httpProvider.defaults.headers.common['X-Authentication-Scheme'] = 'Session';
       // prepend a given base path to requests performed via $http
       //
       // NOTE: this does not apply to Hyperagent-based queries, which instead use
@@ -203,7 +207,12 @@ openprojectApp
       $httpProvider.interceptors.push(function($q) {
         return {
           'request': function(config) {
-            if (!config.url.match('(^/templates|\\.html$)')) {
+            // OpenProject can run in a subpath e.g. https://mydomain/open_project.
+            // We append the path found as the base-tag value to all http requests
+            // to the server except:
+            //   * when the path is already appended
+            //   * when we are getting a template
+            if (!config.url.match('(^/templates|\\.html$|^' + window.appBasePath + ')')) {
               config.url = window.appBasePath + config.url;
             }
 

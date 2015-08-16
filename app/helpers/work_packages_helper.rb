@@ -246,7 +246,7 @@ module WorkPackagesHelper
         title << content_tag(:span, l(:description_sub_work_package), class: 'hidden-for-sighted')
       end
 
-      issue_text = link_to(work_package.to_s.html_safe, work_package_path(work_package))
+      issue_text = link_to(work_package.to_s, work_package_path(work_package))
     end
 
     content_tag :tr, class: css_classes.join(' ') do
@@ -434,7 +434,7 @@ module WorkPackagesHelper
   end
 
   def work_package_form_field(required: false, classes: '')
-    div_class = 'form--field'
+    div_class = 'form--field -wide-label -break-words'
     div_class << " #{classes}"
     div_class << ' -required' if required
 

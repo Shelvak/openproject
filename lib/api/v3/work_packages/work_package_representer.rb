@@ -53,7 +53,7 @@ module API
             href: api_v3_paths.work_package_form(represented.id),
             method: :post,
             title: "Update #{represented.subject}"
-          } if current_user_allowed_to(:edit_work_packages)
+          } if current_user_allowed_to(:edit_work_packages, context: represented.project)
         end
 
         link :schema do
@@ -67,7 +67,7 @@ module API
             href: api_v3_paths.work_package(represented.id),
             method: :patch,
             title: "Update #{represented.subject}"
-          } if current_user_allowed_to(:edit_work_packages)
+          } if current_user_allowed_to(:edit_work_packages, context: represented.project)
         end
 
         link :delete do
@@ -75,7 +75,7 @@ module API
             href: work_packages_bulk_path(ids: represented),
             method: :delete,
             title: "Delete #{represented.subject}"
-          } if current_user_allowed_to(:delete_work_packages)
+          } if current_user_allowed_to(:delete_work_packages, context: represented.project)
         end
 
         link :log_time do
@@ -83,7 +83,7 @@ module API
             href: new_work_package_time_entry_path(represented),
             type: 'text/html',
             title: "Log time on #{represented.subject}"
-          } if current_user_allowed_to(:log_time)
+          } if current_user_allowed_to(:log_time, context: represented.project)
         end
 
         link :duplicate do
@@ -91,7 +91,7 @@ module API
             href: new_project_work_package_path(represented.project, copy_from: represented),
             type: 'text/html',
             title: "Duplicate #{represented.subject}"
-          } if current_user_allowed_to(:add_work_packages)
+          } if current_user_allowed_to(:add_work_packages, context: represented.project)
         end
 
         link :move do
@@ -99,7 +99,7 @@ module API
             href: new_work_package_move_path(represented),
             type: 'text/html',
             title: "Move #{represented.subject}"
-          } if current_user_allowed_to(:move_work_packages)
+          } if current_user_allowed_to(:move_work_packages, context: represented.project)
         end
 
         linked_property :type, embed_as: ::API::V3::Types::TypeRepresenter
@@ -112,40 +112,54 @@ module API
                         getter: :assigned_to,
                         embed_as: ::API::V3::Users::UserRepresenter
 
-        link :availableWatchers do
+        link :attachments do
           {
-            href: api_v3_paths.available_watchers(represented.id),
-            title: 'Available Watchers'
-          } if current_user_allowed_to(:add_work_package_watchers)
+            href: api_v3_paths.attachments_by_work_package(represented.id)
+          }
         end
 
-        link :watchChanges do
+        link :availableWatchers do
+          {
+            href: api_v3_paths.available_watchers(represented.id)
+          } if current_user_allowed_to(:add_work_package_watchers, context: represented.project)
+        end
+
+        link :watch do
           {
             href: api_v3_paths.work_package_watchers(represented.id),
             method: :post,
-            data: { user_id: current_user.id },
-            title: 'Watch work package'
-          } if !current_user.anonymous? &&
-               current_user_allowed_to(:view_work_packages) &&
-               !represented.watcher_users.include?(current_user)
+            payload: { user: { href: api_v3_paths.user(current_user.id) } }
+          } unless current_user.anonymous? || represented.watcher_users.include?(current_user)
         end
 
-        link :unwatchChanges do
+        link :unwatch do
           {
-            href: "#{api_v3_paths.work_package_watchers(represented.id)}/#{current_user.id}",
-            method: :delete,
-            title: 'Unwatch work package'
-          } if current_user_allowed_to(:view_work_packages) &&
-               represented.watcher_users.include?(current_user)
+            href: api_v3_paths.watcher(current_user.id, represented.id),
+            method: :delete
+          } if represented.watcher_users.include?(current_user)
+        end
+
+        link :watchers do
+          {
+            href: api_v3_paths.work_package_watchers(represented.id)
+          } if current_user_allowed_to(:view_work_package_watchers, context: represented.project)
         end
 
         link :addWatcher do
           {
-            href: "#{api_v3_paths.work_package_watchers(represented.id)}{?user_id}",
+            href: api_v3_paths.work_package_watchers(represented.id),
             method: :post,
-            title: 'Add watcher',
+            payload: { user: { href: api_v3_paths.user('{user_id}') } },
             templated: true
-          } if current_user_allowed_to(:add_work_package_watchers)
+          } if current_user_allowed_to(:add_work_package_watchers, context: represented.project)
+        end
+
+        link :removeWatcher do
+          {
+            href: api_v3_paths.watcher('{user_id}', represented.id),
+            method: :delete,
+            templated: true
+          } if current_user_allowed_to(:delete_work_package_watchers, context: represented.project)
         end
 
         link :addRelation do
@@ -153,7 +167,8 @@ module API
             href: api_v3_paths.work_package_relations(represented.id),
             method: :post,
             title: 'Add relation'
-          } if current_user_allowed_to(:manage_work_package_relations)
+          } if current_user_allowed_to(:manage_work_package_relations,
+                                       context: represented.project)
         end
 
         link :addChild do
@@ -162,7 +177,7 @@ module API
                                                 work_package: { parent_id: represented }),
             type: 'text/html',
             title: "Add child of #{represented.subject}"
-          } if current_user_allowed_to(:add_work_packages)
+          } if current_user_allowed_to(:add_work_packages, context: represented.project)
         end
 
         link :changeParent do
@@ -170,7 +185,7 @@ module API
             href: api_v3_paths.work_package(represented.id),
             method: :patch,
             title: "Change parent of #{represented.subject}"
-          } if current_user_allowed_to(:manage_subtasks)
+          } if current_user_allowed_to(:manage_subtasks, context: represented.project)
         end
 
         link :addComment do
@@ -178,7 +193,7 @@ module API
             href: api_v3_paths.work_package_activities(represented.id),
             method: :post,
             title: 'Add comment'
-          } if current_user_allowed_to(:add_work_package_notes)
+          } if current_user_allowed_to(:add_work_package_notes, context: represented.project)
         end
 
         linked_property :parent,
@@ -191,7 +206,7 @@ module API
             href: work_package_time_entries_path(represented.id),
             type: 'text/html',
             title: 'Time entries'
-          } if current_user_allowed_to(:view_time_entries)
+          } if current_user_allowed_to(:view_time_entries, context: represented.project)
         end
 
         linked_property :category, embed_as: ::API::V3::Categories::CategoryRepresenter
@@ -247,7 +262,9 @@ module API
                    datetime_formatter.format_duration_from_hours(represented.spent_hours)
                  end,
                  writeable: false,
-                 if: -> (_) { current_user_allowed_to(:view_time_entries) }
+                 if: -> (_) {
+                   current_user_allowed_to(:view_time_entries, context: represented.project)
+                 }
         property :done_ratio,
                  as: :percentageDone,
                  render_nil: true,
@@ -270,11 +287,14 @@ module API
         property :watchers,
                  embedded: true,
                  exec_context: :decorator,
-                 if: -> (*) { current_user_allowed_to(:view_work_package_watchers) }
-        collection :attachments,
-                   embedded: true,
-                   class: ::Attachment,
-                   decorator: ::API::V3::Attachments::AttachmentRepresenter
+                 if: -> (*) {
+                   current_user_allowed_to(:view_work_package_watchers,
+                                           context: represented.project)
+                 }
+
+        property :attachments,
+                 embedded: true,
+                 exec_context: :decorator
 
         property :relations, embedded: true, exec_context: :decorator
 
@@ -289,13 +309,26 @@ module API
         end
 
         def watchers
-          watchers =
-            represented.watcher_users.order(User::USER_FORMATS_STRUCTURE[Setting.user_format])
-          watchers.map do |watcher|
-            ::API::V3::Users::UserRepresenter.new(watcher,
-                                                  work_package: represented,
-                                                  current_user: current_user)
-          end
+          # TODO/LEGACY: why do we need to ensure a specific order here?
+          watchers = represented.watcher_users.order(User::USER_FORMATS_STRUCTURE[Setting.user_format])
+          total = watchers.count
+          self_link = api_v3_paths.work_package_watchers(represented.id)
+
+          # FIXME/LEGACY: we pass the WP as context?!? that makes a difference!!!
+          # tl;dr: the embedded user representer must not be better than any other user representer
+          context = { current_user: current_user, work_package: represented }
+          Users::UserCollectionRepresenter.new(watchers,
+                                               total,
+                                               self_link,
+                                               context: context)
+        end
+
+        def attachments
+          self_path = api_v3_paths.attachments_by_work_package(represented.id)
+          attachments = represented.attachments
+          ::API::V3::Attachments::AttachmentCollectionRepresenter.new(attachments,
+                                                                      attachments.count,
+                                                                      self_path)
         end
 
         def relations
@@ -315,10 +348,6 @@ module API
           if represented.fixed_version.present?
             Versions::VersionRepresenter.new(represented.fixed_version, current_user: current_user)
           end
-        end
-
-        def current_user_allowed_to(permission)
-          current_user && current_user.allowed_to?(permission, represented.project)
         end
 
         def visible_children

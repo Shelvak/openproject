@@ -28,7 +28,7 @@
 
 source 'https://rubygems.org'
 
-gem "rails", "~> 3.2.21"
+gem "rails", "~> 3.2.22"
 
 gem "coderay", "~> 1.0.9"
 gem "rubytree", "~> 0.8.3"
@@ -37,6 +37,9 @@ gem 'globalize', "~> 3.1.0"
 gem 'omniauth'
 gem 'request_store', "~> 1.1.0"
 gem 'gravatar_image_tag', '~> 1.2.0'
+
+gem 'warden', '~> 1.2'
+gem 'warden-basic_auth', '~> 0.2.1'
 
 # TODO: adds #auto_link which was deprecated in rails 3.1
 gem 'rails_autolink', '~> 1.1.6'
@@ -64,7 +67,7 @@ gem 'ruby-duration', '~> 3.2.0'
 # This can be removed as soon as said bugfix is integrated into rabl itself.
 # See: config/initializers/rabl_hack.rb
 gem 'rabl', '0.9.3'
-gem 'multi_json'
+gem 'multi_json', '~> 1.11.0'
 gem 'oj', '~> 2.11.4'
 
 # will need to be removed once we are on rails4 as it will be part of the rails4 core
@@ -85,7 +88,7 @@ gem 'rack-protection', :git => "https://github.com/finnlabs/rack-protection.git"
 # https://github.com/kickstarter/rack-attack
 gem 'rack-attack'
 
-gem 'syck', :platforms => [:mri, :mingw], :require => false
+gem 'syck', :platforms => [:mri, :mingw, :x64_mingw], :require => false
 
 gem 'gon', '~> 4.0'
 
@@ -126,6 +129,8 @@ gem 'unicorn'
 # Gems we don't depend directly on, but specify here to make sure we don't use a vulnerable
 # version. Please add a link to a security advisory when adding a Gem here.
 
+gem 'rack', '~>1.4.7'
+
 gem 'i18n', '~> 0.6.8'
 # see https://groups.google.com/forum/#!topic/ruby-security-ann/pLrh6DUw998
 
@@ -136,7 +141,8 @@ gem 'fog', '~> 1.23.0', require: "fog/aws/storage"
 
 group :test do
   gem 'rack-test', '~> 0.6.2'
-  gem 'shoulda'
+  gem 'shoulda-context', '~> 1.2'
+
   gem 'object-daddy', '~> 1.1.0'
   gem "launchy", "~> 2.3.0"
   gem "factory_girl_rails", "~> 4.5"
@@ -156,14 +162,15 @@ group :test do
   gem 'capybara', '~> 2.3.0'
   gem 'capybara-screenshot', '~> 1.0.4'
   gem 'capybara-select2', github: 'goodwill/capybara-select2'
-  gem 'selenium-webdriver', '~> 2.44.0'
+  gem 'capybara-ng', '~> 0.2.1'
+  gem 'selenium-webdriver', '~> 2.45.0'
   gem 'timecop', '~> 0.7.1'
 
   gem 'rb-readline', "~> 0.5.1" # ruby on CI needs this
   # why in Gemfile? see: https://github.com/guard/guard-test
   gem 'ruby-prof'
   gem 'simplecov', '0.8.0.pre'
-  gem "shoulda-matchers", '~> 2.5.0'
+  gem "shoulda-matchers", '~> 2.8', require: nil
   gem "json_spec"
   gem "activerecord-tableless", "~> 1.0"
   gem 'codecov', require: nil
@@ -204,8 +211,11 @@ gem 'reform', '~> 1.2.6', require: false
 # warned.
 
 gem "mysql2", "~> 0.3.11"
-gem "openproject-translations", github: 'opf/openproject-translations', branch: 'stable/4.2'
 gem 'bugsnag'
+
+group :opf_plugins do
+  gem 'openproject-translations', git:'https://github.com/opf/openproject-translations.git', branch: 'release/4.2'
+end
 
 # Load Gemfile.local, Gemfile.plugins and plugins' Gemfiles
 Dir.glob File.expand_path("../{Gemfile.local,Gemfile.plugins,lib/plugins/*/Gemfile}", __FILE__) do |file|

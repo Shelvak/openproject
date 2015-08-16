@@ -46,6 +46,14 @@ module API
             "#{root}/attachments/#{id}"
           end
 
+          def self.attachment_download(id)
+            Rails.application.routes.url_helpers.attachment_path(id)
+          end
+
+          def self.attachments_by_work_package(id)
+            "#{work_package(id)}/attachments"
+          end
+
           def self.available_assignees(project_id)
             "#{project(project_id)}/available_assignees"
           end
@@ -64,6 +72,10 @@ module API
 
           def self.category(id)
             "#{root}/categories/#{id}"
+          end
+
+          def self.create_work_package_form(project_id)
+            "#{work_packages_by_project(project_id)}/form"
           end
 
           def self.priorities
@@ -157,7 +169,7 @@ module API
           end
 
           def self.watcher(id, work_package_id)
-            "#{work_package(work_package_id)}/watchers/#{id}"
+            "#{work_package_watchers(work_package_id)}/#{id}"
           end
 
           def self.work_packages
@@ -190,6 +202,10 @@ module API
 
           def self.work_package_watchers(id)
             "#{work_package(id)}/watchers"
+          end
+
+          def self.work_packages_by_project(project_id)
+            "#{project(project_id)}/work_packages"
           end
 
           def self.root_path

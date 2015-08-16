@@ -34,9 +34,10 @@ ENV['RAILS_ENV'] ||= 'test'
 
 require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
-
+require 'shoulda/matchers'
 require 'rspec/example_disabler'
 require 'capybara/rails'
+require 'capybara-screenshot/rspec'
 
 Capybara.register_driver :selenium do |app|
   require 'selenium/webdriver'
@@ -110,6 +111,10 @@ RSpec.configure do |config|
 
   # add helpers to parse json-responses
   config.include JsonSpec::Helpers
+
+  config.include ::Angular::DSL
+
+  Capybara.default_wait_time = 4
 
   config.after(:each) do
     OpenProject::RspecCleanup.cleanup

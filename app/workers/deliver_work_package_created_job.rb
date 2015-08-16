@@ -27,30 +27,19 @@
 # See doc/COPYRIGHT.rdoc for more details.
 #++
 
-class DeliverWorkPackageCreatedJob
-  include MailNotificationJob
-
-  def initialize(user_id, work_package_id, current_user_id)
-    @user_id         = user_id
+class DeliverWorkPackageCreatedJob < MailNotificationJob
+  def initialize(recipient_id, work_package_id, author_id)
+    super(recipient_id, author_id)
     @work_package_id = work_package_id
-    @current_user_id = current_user_id
   end
 
   private
 
   def notification_mail
-    @notification_mail ||= UserMailer.work_package_added(user, work_package, current_user)
-  end
-
-  def user
-    @user ||= Principal.find(@user_id)
+    @notification_mail ||= UserMailer.work_package_added(recipient, work_package, author)
   end
 
   def work_package
     @work_package ||= WorkPackage.find(@work_package_id)
-  end
-
-  def current_user
-    @current_user ||= Principal.find(@current_user_id)
   end
 end
